@@ -152,9 +152,11 @@ You can host this website completely free using **GitHub Pages** in less than 1 
 4. Under **"Build and deployment" > "Branch"**:
    - Select **main** from the branch dropdown.
    - Leave the folder as **/(root)**.
-5. Click **Save**.
-6. Refresh after 30-60 seconds. You will see a banner with your live URL:
-   https://vivekducs.github.io/neev-welfare/
+5. Under **"Custom domain"**:
+   - Enter: `www.neevwelfare.org`
+   - Check **"Enforce HTTPS"**.
+6. Click **Save**. Your website will be live at:
+   https://www.neevwelfare.org/
 
 ---
 
