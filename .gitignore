@@ -1,0 +1,26 @@
+# Operating System files
+.DS_Store
+Thumbs.db
+desktop.ini
+*.tmp
+
+# Editor & IDE configurations
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Logs & temp files
+*.log
+npm-debug.log*
+
+# Local Backups
+*.backup.*
+
+# Design mockup & reference files
+Design.svg
+Footer.pdf
+Header.pdf
+Header.png
+Section - 1. HERO SECTION.png
+*.pdf
