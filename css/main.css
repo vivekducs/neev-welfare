@@ -107,6 +107,8 @@ html {
   scroll-padding-top: var(--header-height);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 body {
@@ -115,6 +117,7 @@ body {
   background-color: var(--white);
   line-height: 1.6;
   overflow-x: hidden;
+  width: 100%;
   position: relative;
 }
 
@@ -532,6 +535,14 @@ h1, h2, h3, h4, h5, h6 {
   white-space: nowrap;
 }
 
+/* Responsive Brand Title & Donate Button */
+.donate-text-short {
+  display: none;
+}
+.donate-text-full {
+  display: inline;
+}
+
 /* Hide brand tagline on screens under 1280px to preserve horizontal navigation space */
 @media (max-width: 1280px) {
   .brand-tagline {
@@ -541,36 +552,68 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Mobile & Tablet Header Optimization */
 @media (max-width: 680px) {
-  .brand-title {
-    font-size: 0.875rem;
-    white-space: nowrap;
+  .site-header {
+    height: 64px;
+  }
+  .site-header .container {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .header-inner {
+    gap: 8px;
+  }
+  .brand-link {
+    gap: 8px;
+    min-width: 0;
   }
   .brand-logo {
-    width: 38px;
-    height: 38px;
+    width: 34px;
+    height: 34px;
+    flex-shrink: 0;
   }
-  .btn-header-donate {
-    padding: 0.48rem 0.875rem;
-    font-size: 0.75rem;
-    font-weight: 700;
+  .brand-title-extra {
+    display: none;
+  }
+  .brand-title {
+    font-size: 0.84rem;
     white-space: nowrap;
   }
   .header-actions {
     gap: 8px;
+    flex-shrink: 0;
+  }
+  .btn-header-donate {
+    padding: 0.44rem 0.8rem;
+    font-size: 0.74rem;
+    font-weight: 700;
+    white-space: nowrap;
   }
   .hamburger-btn {
-    width: 36px;
-    height: 36px;
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+    min-height: 38px;
     padding: 7px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }
 
-@media (max-width: 380px) {
+@media (max-width: 440px) {
   .brand-title {
-    font-size: 0.8rem;
+    font-size: 0.78rem;
+  }
+  .donate-text-full {
+    display: none;
+  }
+  .donate-text-short {
+    display: inline;
   }
   .btn-header-donate {
-    padding: 0.42rem 0.68rem;
+    padding: 0.4rem 0.68rem;
     font-size: 0.7rem;
   }
 }
@@ -643,6 +686,7 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   gap: 5px;
   width: 40px;
   height: 40px;
@@ -652,6 +696,12 @@ h1, h2, h3, h4, h5, h6 {
   transition: background var(--transition-fast);
   border: none;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+.hamburger-btn * {
+  pointer-events: none;
 }
 
 @media (min-width: 1140px) {
@@ -666,6 +716,7 @@ h1, h2, h3, h4, h5, h6 {
   background-color: var(--navy-900);
   border-radius: 2px;
   transition: transform var(--transition-normal), opacity var(--transition-normal);
+  pointer-events: none;
 }
 
 .hamburger-btn[aria-expanded="true"] .hamburger-bar:nth-child(1) {
@@ -686,15 +737,18 @@ h1, h2, h3, h4, h5, h6 {
   inset: 0;
   background-color: rgba(4, 15, 28, 0.6);
   backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   z-index: 1100;
   opacity: 0;
   pointer-events: none;
-  transition: opacity var(--transition-normal);
+  visibility: hidden;
+  transition: opacity var(--transition-normal), visibility var(--transition-normal);
 }
 
 .mobile-drawer-overlay.active {
   opacity: 1;
   pointer-events: auto;
+  visibility: visible;
 }
 
 .mobile-drawer {
@@ -703,19 +757,23 @@ h1, h2, h3, h4, h5, h6 {
   right: 0;
   width: min(320px, 85vw);
   height: 100%;
+  height: 100dvh;
   background-color: var(--white);
   z-index: 1200;
   box-shadow: -10px 0 30px rgba(0, 0, 0, 0.15);
   display: flex;
   flex-direction: column;
   transform: translateX(100%);
-  transition: transform var(--transition-normal);
+  visibility: hidden;
+  transition: transform var(--transition-normal), visibility var(--transition-normal);
   padding: var(--space-6);
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .mobile-drawer.active {
   transform: translateX(0);
+  visibility: visible;
 }
 
 .drawer-header {

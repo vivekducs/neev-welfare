@@ -196,22 +196,32 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { passive: true });
 
   // Open Drawer
-  function openMobileDrawer() {
-    hamburgerBtn.setAttribute('aria-expanded', 'true');
-    mobileDrawer.classList.add('active');
-    mobileOverlay.classList.add('active');
-    mobileDrawer.setAttribute('aria-hidden', 'false');
-    mobileOverlay.setAttribute('aria-hidden', 'false');
+  function openMobileDrawer(e) {
+    if (e && e.type === 'touchstart') e.preventDefault();
+    if (hamburgerBtn) hamburgerBtn.setAttribute('aria-expanded', 'true');
+    if (mobileDrawer) {
+      mobileDrawer.classList.add('active');
+      mobileDrawer.setAttribute('aria-hidden', 'false');
+    }
+    if (mobileOverlay) {
+      mobileOverlay.classList.add('active');
+      mobileOverlay.setAttribute('aria-hidden', 'false');
+    }
     document.body.style.overflow = 'hidden';
   }
 
   // Close Drawer
-  function closeMobileDrawer() {
-    hamburgerBtn.setAttribute('aria-expanded', 'false');
-    mobileDrawer.classList.remove('active');
-    mobileOverlay.classList.remove('active');
-    mobileDrawer.setAttribute('aria-hidden', 'true');
-    mobileOverlay.setAttribute('aria-hidden', 'true');
+  function closeMobileDrawer(e) {
+    if (e && e.type === 'touchstart') e.preventDefault();
+    if (hamburgerBtn) hamburgerBtn.setAttribute('aria-expanded', 'false');
+    if (mobileDrawer) {
+      mobileDrawer.classList.remove('active');
+      mobileDrawer.setAttribute('aria-hidden', 'true');
+    }
+    if (mobileOverlay) {
+      mobileOverlay.classList.remove('active');
+      mobileOverlay.setAttribute('aria-hidden', 'true');
+    }
     document.body.style.overflow = '';
   }
 
@@ -222,7 +232,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Close on Escape key
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
-      if (mobileDrawer.classList.contains('active')) closeMobileDrawer();
+      if (mobileDrawer && mobileDrawer.classList.contains('active')) closeMobileDrawer();
       closeAllModals();
     }
   });
@@ -233,6 +243,13 @@ document.addEventListener('DOMContentLoaded', () => {
       closeMobileDrawer();
     });
   });
+
+  const drawerDonateBtn = document.querySelector('.mobile-drawer-donate');
+  if (drawerDonateBtn) {
+    drawerDonateBtn.addEventListener('click', () => {
+      closeMobileDrawer();
+    });
+  }
 
   // --- 4. Active Section Highlighting via Intersection Observer ---
   const trackedSections = [
