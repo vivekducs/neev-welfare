@@ -2212,19 +2212,53 @@ h1, h2, h3, h4, h5, h6 {
   display: block;
 }
 
-.group-badge {
-  background: var(--gray-100);
-  font-size: 0.6875rem;
-  font-weight: 700;
-  color: var(--green-600);
-  padding: 4px 12px;
-  border-radius: var(--radius-pill);
+.group-pill-header {
+  margin-bottom: var(--space-8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
+.group-pill-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #0a2540 0%, #00873E 100%);
+  color: var(--white);
+  font-size: 0.8125rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 6px 22px;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 4px 12px rgba(0, 135, 62, 0.25);
+  margin-bottom: var(--space-3);
+}
+
+.group-pill-badge.core-pill {
+  background: linear-gradient(135deg, #0a2540 0%, #dc2626 100%);
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.25);
+}
+
+.group-main-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--navy-900);
+  margin-bottom: 6px;
+  letter-spacing: -0.01em;
+}
+
+.group-sub-text {
+  font-size: 0.875rem;
+  color: var(--gray-500);
+  margin: 0;
+  max-width: 600px;
+}
+
+/* Directors / Founders Grid (3 Cards - Reference Image 1) */
 .directors-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--space-6);
+  margin-bottom: var(--space-10);
 }
 
 @media (min-width: 768px) {
@@ -2234,70 +2268,116 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .director-card {
-  background: var(--gray-50);
-  border-radius: var(--radius-lg);
-  padding: var(--space-6);
+  background: var(--white);
+  border-radius: 20px;
   border: 1px solid var(--gray-200);
-  border-top: 4px solid var(--green-500);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
   display: flex;
   flex-direction: column;
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
 }
 
-.director-avatar-wrapper {
+.director-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.1);
+  border-color: rgba(0, 135, 62, 0.3);
+}
+
+/* Large Founder Photo Frame */
+.director-photo-container {
   position: relative;
-  width: fit-content;
-  margin-bottom: var(--space-4);
-}
-
-.avatar-circle {
-  width: 54px;
-  height: 54px;
-  border-radius: 50%;
+  width: 100%;
+  height: 290px;
+  background: linear-gradient(180deg, #f8fafc 0%, #edf2f7 100%);
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
-  color: var(--white);
-  font-weight: 800;
-  font-size: 1.125rem;
+  overflow: visible;
+  padding: 10px 12px 18px 12px;
 }
 
-.avatar-circle.bg-navy { background-color: var(--navy-900); }
-.avatar-circle.bg-rose { background-color: #be185d; }
-.avatar-circle.bg-teal { background-color: #0f766e; }
-
-.avatar-role-pill {
-  position: absolute;
-  bottom: -4px;
-  right: -8px;
-  background: var(--green-500);
-  color: var(--white);
-  font-size: 0.625rem;
-  font-weight: 700;
-  padding: 2px 8px;
-  border-radius: var(--radius-pill);
-}
-
-.director-name {
-  font-size: 1.125rem;
-  font-weight: 800;
-  color: var(--navy-900);
-  margin-bottom: 2px;
-}
-
-.director-role {
-  font-size: 0.75rem;
-  font-weight: 700;
-  color: var(--green-600);
-  margin-bottom: var(--space-3);
+.director-cover-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center bottom;
   display: block;
 }
 
-.director-bio {
+/* Overlapping Badge Circle at bottom center of photo */
+.director-badge-circle {
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--navy-900);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid var(--white);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 2;
+}
+
+.director-card-body {
+  padding: 30px 22px 22px 22px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.director-name {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--navy-900);
+  text-align: center;
+  margin-bottom: 4px;
+  letter-spacing: -0.01em;
+}
+
+.director-role {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--green-600);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-align: center;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.director-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 var(--space-4) 0;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.director-bullets li {
+  position: relative;
+  padding-left: 18px;
   font-size: 0.8125rem;
   color: var(--gray-600);
   line-height: 1.55;
-  margin-bottom: var(--space-5);
-  flex-grow: 1;
+}
+
+.director-bullets li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--navy-900);
+  font-size: 1.125rem;
+  line-height: 1.4;
+  font-weight: 800;
 }
 
 .director-footer {
@@ -2306,6 +2386,7 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   border-top: 1px solid var(--gray-200);
   padding-top: var(--space-3);
+  margin-top: auto;
 }
 
 .trustee-badge {
@@ -2326,14 +2407,17 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--navy-900);
 }
 
-/* Core Team Grid */
+/* ==========================================================================
+   Core Leadership Team Grid (Reference Image 2)
+   ========================================================================== */
+
 .core-team-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--space-4);
+  gap: var(--space-5);
 }
 
-@media (min-width: 640px) {
+@media (min-width: 600px) {
   .core-team-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -2341,83 +2425,147 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (min-width: 1024px) {
   .core-team-grid {
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
 .team-lead-card {
-  background: var(--gray-50);
-  border-radius: var(--radius-md);
-  padding: var(--space-5) var(--space-4);
+  background: var(--white);
+  border-radius: 18px;
+  padding: 26px 20px 22px 20px;
   border: 1px solid var(--gray-200);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
   display: flex;
   flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
 }
 
-.lead-avatar {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
+.team-lead-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+  border-color: rgba(220, 38, 38, 0.25);
+}
+
+/* Executive Portrait Avatar (Exact 3:4 ratio: 150px x 200px so complete image is 100% visible) */
+.lead-avatar-wrap {
+  position: relative;
+  width: 150px;
+  height: 200px;
+  margin-bottom: 16px;
+}
+
+.lead-circle {
+  width: 100%;
+  height: 100%;
+  border-radius: 18px;
+  border: 4px solid #e0f2fe;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  background-color: var(--gray-100);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--white);
-  font-weight: 700;
-  font-size: 0.875rem;
-  margin-bottom: 8px;
 }
 
-.lead-avatar.bg-navy { background-color: var(--navy-900); }
-.lead-avatar.bg-brown { background-color: #9a3412; }
-.lead-avatar.bg-teal { background-color: #0f766e; }
-.lead-avatar.bg-purple { background-color: #6b21a8; }
-.lead-avatar.bg-navy-dark { background-color: #001c37; }
+.lead-circle.bg-navy { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); }
+.lead-circle.bg-brown { background: linear-gradient(135deg, #7c2d12 0%, #9a3412 100%); }
+.lead-circle.bg-teal { background: linear-gradient(135deg, #0f766e 0%, #115e59 100%); }
+.lead-circle.bg-purple { background: linear-gradient(135deg, #581c87 0%, #6b21a8 100%); }
+.lead-circle.bg-navy-dark { background: linear-gradient(135deg, #021427 0%, #062b53 100%); }
 
-.lead-role-pill {
-  font-size: 0.6875rem;
-  font-weight: 700;
-  color: var(--navy-900);
-  background: var(--gray-200);
-  padding: 2px 8px;
-  border-radius: var(--radius-pill);
-  width: fit-content;
-  margin-bottom: 8px;
+.lead-circle span {
+  color: var(--white);
+  font-weight: 800;
+  font-size: 2.2rem;
+  letter-spacing: 0.02em;
+}
+
+.lead-photo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+}
+
+/* 5 o'clock Star Badge (matches red badge with star in Image 2) */
+.lead-star-badge {
+  position: absolute;
+  bottom: -4px;
+  right: -4px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #dc2626;
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2.5px solid var(--white);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+  z-index: 2;
 }
 
 .lead-name {
-  font-size: 0.875rem;
-  font-weight: 700;
+  font-size: 1.0625rem;
+  font-weight: 800;
   color: var(--navy-900);
-  line-height: 1.25;
   margin-bottom: 4px;
-}
-
-.founding-tag {
-  font-weight: 500;
-  font-size: 0.6875rem;
-  color: var(--green-600);
-  display: block;
 }
 
 .lead-title {
   font-size: 0.75rem;
-  color: var(--gray-600);
+  font-weight: 700;
+  color: #dc2626;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 10px;
   line-height: 1.35;
-  margin-bottom: var(--space-4);
-  flex-grow: 1;
 }
 
-.lead-tag-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
+.lead-tag {
+  display: inline-block;
   font-size: 0.6875rem;
   font-weight: 600;
-  color: var(--green-600);
-  background: var(--green-100);
-  padding: 4px 8px;
-  border-radius: var(--radius-xs);
-  width: fit-content;
+  color: var(--gray-600);
+  background: var(--gray-100);
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+}
+
+/* Mobile Responsiveness Fine-Tuning */
+@media (max-width: 639px) {
+  .director-photo-container {
+    height: 280px;
+    padding: 8px 10px 16px 10px;
+  }
+  .director-card-body {
+    padding: 26px 16px 18px 16px;
+  }
+  .director-name {
+    font-size: 1.125rem;
+  }
+  .director-bullets li {
+    font-size: 0.78125rem;
+  }
+  .lead-avatar-wrap {
+    width: 135px;
+    height: 180px;
+  }
+  .lead-circle span {
+    font-size: 1.6rem;
+  }
+  .team-lead-card {
+    padding: 20px 14px 18px 14px;
+  }
+  .lead-name {
+    font-size: 1rem;
+  }
+  .lead-title {
+    font-size: 0.71875rem;
+  }
 }
 
 /* Governance Trust Strip */
