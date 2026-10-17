@@ -109,9 +109,6 @@ export function DonationSection({ showTitle = true }: DonationSectionProps) {
     setCustomAmount("");
   };
 
-  // Estimated tax saving (~30% bracket on 50% exempt amount = 15% effective saving)
-  const estimatedTaxSaving = Math.round(amount * 0.15);
-
   return (
     <section className="py-16 md:py-24 bg-slate-50 border-b border-slate-100" id="donate-section">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -209,14 +206,10 @@ export function DonationSection({ showTitle = true }: DonationSectionProps) {
                   )}
                 </div>
 
-                {/* Tax Benefit Callout */}
-                <div className="mt-3 p-3 rounded-xl bg-emerald-50/80 border border-emerald-200/70 text-xs text-emerald-900 flex items-center justify-between">
-                  <span className="font-medium">
-                    Estimated 80G tax benefit on {formatCurrency(amount)}:
-                  </span>
-                  <span className="font-bold text-[#00873e]">
-                    ~{formatCurrency(estimatedTaxSaving)} saved
-                  </span>
+                {/* Statutory 80G Tax Deduction Notice */}
+                <div className="mt-3 p-3 rounded-xl bg-emerald-50/70 border border-emerald-200/60 text-xs text-emerald-900 flex items-center gap-2">
+                  <ShieldCheck className="w-4 h-4 text-[#00873e] shrink-0" />
+                  <span>Eligible for 50% deduction from taxable income under Section 80G</span>
                 </div>
               </div>
 

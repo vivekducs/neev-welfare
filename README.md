@@ -107,7 +107,7 @@ Neevwelfare/
 | `/team/` | Leadership & Team | Board of Directors, Core Leadership Team, and institutional governance framework |
 | `/impact/` | Verified Impact | Animated KPI counters, milestone timeline, United Nations SDG alignment |
 | `/get-involved/` | Get Involved | Volunteer application form, community drives RSVP, Corporate CSR partnerships |
-| `/donate/` | 80G Donation | Live tax calculator, preset tiers, PAN verification, statutory 80G certification |
+| `/donate/` | 80G Donation | Preset contribution tiers, PAN verification, statutory 80G tax receipt |
 | `/news/` | Field Updates | News articles with category filters, full reading modals, media inquiry desk |
 | `/contact/` | Contact Us | Direct message form, Jhansi head office details, transit & Google Maps directions |
 | `/not-found` | 404 Error | Custom 404 page with navigation links back to key sections |
@@ -131,7 +131,7 @@ The organization operates under a two-tier leadership model in accordance with S
 
 - **Intervention Cards**: Image zoom on hover, category pill badge, impact metric, and modal popup for detailed initiative specifications.
 - **Impact KPI Counters**: Hardware-accelerated animated number count-up triggered when scrolled into view.
-- **80G Donation Calculator**: Interactive calculation of 50% Section 80G tax deductions with preset tiers, frequency selector (One-Time vs Monthly), and PAN input validation.
+- **80G Donation Portal**: Preset contribution tiers, frequency selector (One-Time vs Monthly), and PAN input validation for official Section 80G tax exemption receipts.
 - **Event Drives & RSVP**: Community drives with one-click synchronization to the volunteer registration form.
 - **Responsive Mobile Navigation**: Touch-friendly slide-out drawer with backdrop blur and auto-dismiss upon navigation.
 - **Accessibility (WCAG 2.2 AA)**:
