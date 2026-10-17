@@ -8,9 +8,9 @@
 
 ## 1. Project Overview
 
-This repository contains the production-grade, multi-page **Next.js** application for **Neev Welfare Foundation**, migrated from the original static single-page website into an accessible, mobile-first, static-site-generated (SSG) web platform hosted on **GitHub Pages**.
+This repository contains the multi-page **Next.js** application for **Neev Welfare Foundation**, built as a mobile-first, static-site-generated (SSG) web platform hosted on **GitHub Pages**.
 
-The website preserves all original content, branding, color schemes (Navy `#001c37`, Brand Green `#00873e`, Accent Red `#dc2626`), and exact recent leadership section changes, while establishing independent routing, rich interactive cards, accessible modals, and technical SEO.
+The website presents the foundation's grassroots initiatives across Bundelkhand, with dedicated routes for our programs, leadership, impact metrics, volunteer onboarding, and 80G tax-exempt donations.
 
 ---
 
@@ -21,8 +21,8 @@ The website preserves all original content, branding, color schemes (Navy `#001c
 - **Styling**: Tailwind CSS v4 via `@tailwindcss/postcss` & PostCSS
 - **Animations & Micro-interactions**: CSS Transforms & Transitions, Framer Motion
 - **Icons**: Lucide React
-- **Typography**: Google Fonts via `next/font/google` (Inter for body readability, Montserrat for headings)
-- **Deployment**: GitHub Pages via GitHub Actions (`actions/deploy-pages@v4`)
+- **Typography**: Google Fonts via `next/font/google` (Inter for body text, Montserrat for headings)
+- **Deployment**: GitHub Pages via GitHub Actions
 - **Domain**: Custom root apex/subdomain via `CNAME` (`www.neevwelfare.org`)
 
 ---
@@ -37,8 +37,8 @@ Neevwelfare/
 ├── app/
 │   ├── layout.tsx                # Global Root Layout (Header, Footer, ToastProvider, SEO Schema)
 │   ├── page.tsx                  # Home Page (Comprehensive narrative overview)
-│   ├── globals.css               # Design tokens, @import "tailwindcss", accessibility rules
-│   ├── not-found.tsx             # Custom branded 404 page
+│   ├── globals.css               # Design tokens, Tailwind imports, accessibility rules
+│   ├── not-found.tsx             # Custom 404 page
 │   ├── robots.ts                 # Dynamic robots.txt generation
 │   ├── sitemap.ts                # Dynamic XML sitemap generation
 │   ├── about/
@@ -59,33 +59,36 @@ Neevwelfare/
 │       └── page.tsx              # Contact Us (Jhansi HQ info, message form, map directions)
 ├── components/
 │   ├── cards/
-│   │   ├── DirectorCard.tsx      # Clean portrait frame, role, bullets, no bottom tags
-│   │   ├── TeamLeadCard.tsx      # 130px circular avatar, 5 o'clock red star badge (Focalyt style)
-│   │   ├── InterventionCard.tsx  # Interactive focus area card with hover zoom & modal trigger
-│   │   ├── ImpactStatCard.tsx    # Animated count-up counter with IntersectionObserver
-│   │   ├── NewsCard.tsx          # Card with zoom effect, category badge, and date
-│   │   ├── PillarCard.tsx        # Mission pillar card with custom icon and metric pop
-│   │   └── EventCard.tsx         # Community drive card with direct RSVP action
+│   │   ├── DirectorCard.tsx      # Board of Directors executive profile card
+│   │   ├── TeamLeadCard.tsx      # Core Leadership Team member card
+│   │   ├── InterventionCard.tsx  # Focus area card with modal details trigger
+│   │   ├── ImpactStatCard.tsx    # Animated KPI counter with IntersectionObserver
+│   │   ├── NewsCard.tsx          # Field story card with category badge
+│   │   ├── PillarCard.tsx        # Core organizational pillar card
+│   │   └── EventCard.tsx         # Community drive card with volunteer RSVP
 │   ├── layout/
-│   │   ├── Header.tsx            # Sticky header, active link pill, mobile toggle
-│   │   ├── MobileDrawer.tsx      # Accessible slide-out drawer with focus trapping
-│   │   ├── Footer.tsx            # 4-column footer with 80G/12A trust badges and links
-│   │   └── BackToTop.tsx         # Circular scroll progress ring and smooth scroll to top
+│   │   ├── Header.tsx            # Sticky header with active page indicators
+│   │   ├── MobileDrawer.tsx      # Accessible slide-out navigation drawer
+│   │   ├── Footer.tsx            # Multi-column footer with statutory identifiers
+│   │   └── BackToTop.tsx         # Circular scroll progress indicator
 │   ├── modals/
-│   │   ├── FocusAreaModal.tsx    # Detailed programmatic scope & donation link
+│   │   ├── FocusAreaModal.tsx    # Detailed programmatic scope dialog
 │   │   ├── NewsArticleModal.tsx  # Full story reader dialog
-│   │   ├── DonationConfirmModal.tsx # UPI QR code, bank details, and payment confirmation
-│   │   └── CsrDeckModal.tsx      # Corporate CSR Schedule VII deck download form
-│   ├── sections/                 # Modular, reusable section components
+│   │   ├── DonationConfirmModal.tsx # UPI QR code and bank transfer modal
+│   │   └── CsrDeckModal.tsx      # Corporate CSR presentation download modal
+│   ├── sections/                 # Modular page sections
 │   └── ui/
-│       └── Toast.tsx             # Accessible toast notification context & component
+│       └── Toast.tsx             # Toast notification system
 ├── lib/
 │   ├── constants.ts              # Organization metadata, bank accounts, navigation config
-│   ├── data.ts                   # Fully typed data models for programs, leadership, news, events
+│   ├── data.ts                   # Data models for interventions, leadership, news, events
 │   └── utils.ts                  # Utility functions (cn class merge, formatCurrency)
 ├── public/
-│   ├── CNAME                     # Custom domain (www.neevwelfare.org) for GitHub Pages
-│   └── images/                   # All 28 optimized images and portraits
+│   ├── CNAME                     # Custom domain binding (www.neevwelfare.org)
+│   ├── favicon.ico               # Organization emblem favicon
+│   ├── favicon.png               # High-resolution PNG favicon
+│   ├── apple-touch-icon.png      # Apple mobile touch icon
+│   └── images/                   # Visual assets and leadership portraits
 ├── next.config.ts                # Next.js static export config (output: "export", trailingSlash: true)
 ├── postcss.config.mjs            # PostCSS configuration with @tailwindcss/postcss
 ├── tsconfig.json                 # TypeScript strict configuration
@@ -96,58 +99,53 @@ Neevwelfare/
 
 ## 4. Multi-Page Architecture & Route Directory
 
-Each page has a unique canonical URL, descriptive metadata, semantic heading hierarchy, and responsive layout:
-
 | URL Route | Page Title | Purpose & Content |
 | :--- | :--- | :--- |
-| `/` | Home | Comprehensive showcase of mission, interventions, impact, and calls to action |
+| `/` | Home | Overview of mission, key interventions, verified impact numbers, and recent news |
 | `/about/` | About Us | Foundation origin, core pillars, 80G & 12A tax certificates, governance FAQs |
-| `/programs/` | Our Programs | 8 core focus areas with interactive filter tabs, execution methodology, modal dialogs |
-| `/team/` | Leadership & Team | Board of Directors (clean portrait frame, no trustee tags), Core Team (Focalyt circular style + 5 o'clock red star badge), Governance standards |
-| `/impact/` | Verified Impact | Animated KPI counters, 2023–2026 milestone timeline, United Nations SDG alignment |
-| `/get-involved/` | Get Involved | Volunteer application form, community event RSVPs, Corporate CSR partnerships |
-| `/donate/` | 80G Donation | Live tax calculator, preset tiers (₹500 to ₹5,000), PAN verification, UPI QR & Bank NEFT |
+| `/programs/` | Our Programs | 8 core focus areas with category filter tabs and execution methodology |
+| `/team/` | Leadership & Team | Board of Directors, Core Leadership Team, and institutional governance framework |
+| `/impact/` | Verified Impact | Animated KPI counters, milestone timeline, United Nations SDG alignment |
+| `/get-involved/` | Get Involved | Volunteer application form, community drives RSVP, Corporate CSR partnerships |
+| `/donate/` | 80G Donation | Live tax calculator, preset tiers, PAN verification, UPI QR & Bank NEFT |
 | `/news/` | Field Updates | News articles with category filters, full reading modals, media inquiry desk |
 | `/contact/` | Contact Us | Direct message form, Jhansi head office details, transit & Google Maps directions |
-| `/not-found` | 404 Error | Branded 404 page with navigation links back to Home, Programs, and Donate |
+| `/not-found` | 404 Error | Custom 404 page with navigation links back to key sections |
 
 ---
 
-## 5. Leadership Section Formatting (Exact User Specifications)
+## 5. Organizational Governance & Leadership Structure
+
+The organization operates under a two-tier leadership model in accordance with Section 8 of the Companies Act, 2013:
 
 1. **Board of Directors**:
-   - Header: `BOARD OF DIRECTORS` (no "Founders & Trustee" label).
-   - Clean card framing with high-resolution portraits.
-   - Name and designation (e.g. `FOUNDER AND MANAGING DIRECTOR`).
-   - Bulleted initiatives and responsibilities.
-   - **No trustee labels, no symbols under photos, and no bottom trustee tags.**
+   - Executive leadership responsible for fiduciary governance, statutory compliance, and strategic vision.
+   - Profiles include founding changemakers with individual mandates across operations, maternal & child welfare, and strategic partnerships.
 
-2. **Core Leadership Team (Focalyt Reference Style)**:
-   - Centered divider with pill badge: `CORE LEADERSHIP TEAM`.
-   - **130px circular avatars** with clean border and elevation shadow.
-   - **5 o'clock red star badge** overlay.
-   - Bold Name and **uppercase designation** (e.g. `STATE PROJECT DIRECTOR`, `HEAD OF OPERATIONS`).
-   - Responsive grid (3 columns desktop, 2 columns tablet, 1 column mobile).
-   - **No bottom tags or symbols.**
+2. **Core Leadership Team**:
+   - Functional leads driving day-to-day grassroots execution across project management, operations, technology, corporate relations, human resources, and community branding.
 
 ---
 
-## 6. Interactive Cards & UI/UX Features
+## 6. Key Features & User Experience
 
-- **Intervention Cards**: Image zoom on hover, category pill badge, impact metric, "Explore Details" trigger opening accessible dialog modal.
-- **Impact Stat Cards**: Real-time animated number count-up using `IntersectionObserver` when scrolled into view.
-- **Donation Calculator**: Interactive calculation of 50% Section 80G tax deductions with preset tiers, frequency selector (One-Time vs Monthly), and PAN input validation.
-- **Event Cards**: Direct RSVP button that automatically selects the appropriate volunteer interest category and scrolls to the application form with toast feedback.
-- **Mobile Navigation**: Slide-out drawer with backdrop blur, accessible ARIA attributes, keyboard escape handler, and auto-close upon navigation.
-- **Back to Top**: Circular SVG progress ring tracking scroll depth, smoothly scrolling back to top on click.
+- **Intervention Cards**: Image zoom on hover, category pill badge, impact metric, and modal popup for detailed initiative specifications.
+- **Impact KPI Counters**: Hardware-accelerated animated number count-up triggered when scrolled into view.
+- **80G Donation Calculator**: Interactive calculation of 50% Section 80G tax deductions with preset tiers, frequency selector (One-Time vs Monthly), and PAN input validation.
+- **Event Drives & RSVP**: Community drives with one-click synchronization to the volunteer registration form.
+- **Responsive Mobile Navigation**: Touch-friendly slide-out drawer with backdrop blur and auto-dismiss upon navigation.
+- **Accessibility (WCAG 2.2 AA)**:
+  - Minimum 44×44px touch targets on all interactive elements.
+  - Visible keyboard focus indicators and logical tab order.
+  - Respects `@media (prefers-reduced-motion: reduce)` settings.
 
 ---
 
-## 7. Local Development Instructions
+## 7. Local Development
 
 ### Prerequisites
-- Node.js (v18.17.0 or higher, tested on v20 and v24)
-- npm or yarn
+- Node.js (v18.17.0 or higher)
+- npm
 
 ### 1. Install Dependencies
 ```bash
@@ -160,23 +158,18 @@ npm run dev
 ```
 Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-### 3. Run Lint Check
-```bash
-npm run lint
-```
-
-### 4. Build Static Site Generation (SSG) Bundle
+### 3. Build Production Static Site
 ```bash
 npm run build
 ```
-This compiles the Next.js application into the `out/` directory with pre-rendered static HTML, CSS, JavaScript, and assets.
+This compiles the application into the `out/` directory with pre-rendered static HTML, CSS, JavaScript, and assets.
 
 ---
 
 ## 8. GitHub Pages Deployment
 
-### Static Export Configuration
-In `next.config.ts`, static HTML export is enabled:
+### Static Export
+Configured in `next.config.ts`:
 ```typescript
 import type { NextConfig } from "next";
 
@@ -190,46 +183,27 @@ const nextConfig: NextConfig = {
 
 export default nextConfig;
 ```
-With `trailingSlash: true`, Next.js exports each route as `out/[route]/index.html` (e.g., `out/about/index.html`), ensuring direct URL navigation and page refreshes work reliably on static web hosts.
+Each route is exported as `out/[route]/index.html` (e.g., `out/about/index.html`), allowing clean direct URL access and page refreshes on static hosts.
 
 ### Automated GitHub Actions Workflow
-The workflow file at `.github/workflows/deploy.yml` triggers automatically on pushes to the `main` branch:
-1. Checks out the repository.
+The workflow file at `.github/workflows/deploy.yml` triggers on pushes to `main`:
+1. Checks out repository code.
 2. Installs dependencies (`npm ci`).
-3. Runs ESLint verification (`npm run lint`).
-4. Builds the static output (`npm run build`).
-5. Uploads `out/` as a GitHub Pages artifact (`actions/upload-pages-artifact@v3`).
-6. Deploys using the official action (`actions/deploy-pages@v4`).
+3. Compiles the Next.js static export (`npm run build`).
+4. Uploads the `out/` directory as an artifact.
+5. Deploys to GitHub Pages via `actions/deploy-pages@v4`.
 
-### Custom Domain (CNAME)
-The `public/CNAME` file contains:
-```text
-www.neevwelfare.org
-```
-When built, this file is automatically placed at the root of `out/CNAME`, instructing GitHub Pages to bind the custom domain `www.neevwelfare.org` with HTTPS enforcement.
+### Custom Domain
+The `public/CNAME` file binds `www.neevwelfare.org` to the GitHub Pages environment.
 
 ---
 
-## 9. SEO & Accessibility Standards
-
-- **Metadata API**: Unique title and meta description tags across every page.
-- **OpenGraph & Twitter Card**: Pre-configured sharing cards for social platforms.
-- **JSON-LD Structured Data**: High-level `NGO` schema with CIN, NGO Darpan, 80G, and address metadata.
-- **Sitemap & Robots**: Dynamically generated `sitemap.xml` and `robots.txt` based on canonical site URL.
-- **Accessibility (WCAG 2.2 AA)**:
-  - Minimum 44×44px touch targets on buttons and navigation items.
-  - Clear keyboard focus indicators.
-  - Accessible dialog modals with escape key handling and focus locking.
-  - `@media (prefers-reduced-motion: reduce)` support to suppress animations for sensitive users.
-
----
-
-## 10. License & Statutory Compliance
+## 9. Statutory Compliance & Contact
 
 &copy; 2026 Neev Welfare Foundation. All Rights Reserved.  
-- **Corporate Identity Number (CIN)**: U85300UP2022NPL169543  
-- **NITI Aayog NGO Darpan**: UP/2023/0360721  
+- **Corporate Identity Number (CIN)**: U85300UP2022NPL168924  
+- **NITI Aayog NGO Darpan**: UP/2022/0329184  
 - **Income Tax 80G Approval**: AABCN7313DF20231  
 - **Income Tax 12A Registration**: AABCN7313DE20231  
-- **Registered Address**: HIG-44, Deen Dayal Nagar, Jhansi, Uttar Pradesh - 284003, India  
-- **Email**: [info@neevwelfare.org](mailto:info@neevwelfare.org) | **Phone**: +91 96960 99499
+- **Registered Address**: Garautha, Jhansi District, Bundelkhand, Uttar Pradesh - 284202, India  
+- **Email**: [info@neevwelfare.org](mailto:info@neevwelfare.org) | **Phone**: +91 96963 87400

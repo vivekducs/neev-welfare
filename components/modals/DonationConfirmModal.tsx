@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { X, CheckCircle2, ShieldCheck, Heart } from "lucide-react";
 import { formatCurrency } from "@/lib/utils";
 
-interface DonationData {
+export interface DonationData {
   amount: number;
   frequency: string;
   cause: string;

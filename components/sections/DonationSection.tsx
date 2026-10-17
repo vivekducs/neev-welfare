@@ -5,7 +5,7 @@ import { useSearchParams } from "next/navigation";
 import { Heart, ShieldCheck, CheckCircle2, QrCode, Building, Lock } from "lucide-react";
 import { SITE_CONFIG } from "@/lib/constants";
 import { formatCurrency } from "@/lib/utils";
-import { DonationConfirmModal } from "@/components/modals/DonationConfirmModal";
+import { DonationConfirmModal, type DonationData } from "@/components/modals/DonationConfirmModal";
 import { useToast } from "@/components/ui/Toast";
 
 const PRESET_AMOUNTS = [500, 1000, 2500, 5000];
@@ -29,24 +29,22 @@ export function DonationSection({ showTitle = true }: DonationSectionProps) {
   const searchParams = useSearchParams();
   const { showToast } = useToast();
 
+  const causeParam = searchParams.get("cause");
+  const initialCause =
+    causeParam && CAUSE_OPTIONS.includes(causeParam)
+      ? causeParam
+      : "General Support & Most Urgent Need";
+
   const [frequency, setFrequency] = useState<"One-Time" | "Monthly">("One-Time");
   const [amount, setAmount] = useState<number>(1000);
   const [customAmount, setCustomAmount] = useState<string>("");
-  const [cause, setCause] = useState<string>("General Support & Most Urgent Need");
+  const [cause, setCause] = useState<string>(initialCause);
   const [name, setName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [pan, setPan] = useState<string>("");
 
   const [errors, setErrors] = useState<Record<string, string>>({});
-  const [confirmData, setConfirmData] = useState<any | null>(null);
-
-  // Pre-fill cause from query param if available
-  useEffect(() => {
-    const causeParam = searchParams.get("cause");
-    if (causeParam && CAUSE_OPTIONS.includes(causeParam)) {
-      setCause(causeParam);
-    }
-  }, [searchParams]);
+  const [confirmData, setConfirmData] = useState<DonationData | null>(null);
 
   const handlePresetSelect = (val: number) => {
     setAmount(val);
