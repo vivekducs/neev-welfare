@@ -147,7 +147,7 @@ export default function AboutPage() {
                 Section 80G Certification
               </h3>
               <p className="text-xs text-slate-600 leading-relaxed">
-                Registered under Section 80G of the Income Tax Act, 1961. All contributions are 50% tax-deductible for Indian individuals and corporate donors.
+                Registered under Section 80G of the Income Tax Act, 1961. Official 80G donation receipts are provided for all contributions.
               </p>
               <div className="pt-2 text-xs font-semibold text-[#00873e]">
                 Instant Form 10BE Receipt

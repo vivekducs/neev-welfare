@@ -65,7 +65,7 @@ export function HeroSection() {
               </div>
               <div className="flex items-center gap-2">
                 <ShieldCheck className="w-4 h-4 text-[#00873e]" />
-                <span className="font-semibold text-slate-800">100% Tax Deductible</span> (80G)
+                <span className="font-semibold text-slate-800">80G & 12A Certified</span> (Section 8 NGO)
               </div>
             </div>
           </div>

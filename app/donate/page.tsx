@@ -12,7 +12,7 @@ import { DonationSection } from "@/components/sections/DonationSection";
 export const metadata: Metadata = {
   title: "Donate Online | 80G Tax-Exempt Contribution",
   description:
-    "Make a 50% tax-exempt donation to Neev Welfare Foundation under Section 80G of the Income Tax Act. Support digital classrooms, women livelihoods, and rural clinics.",
+    "Support grassroots transformation through Neev Welfare Foundation. Tax Exemption under Section 80G of the Income Tax Act.",
   alternates: {
     canonical: `${SITE_CONFIG.url}/donate/`,
   },
@@ -20,8 +20,8 @@ export const metadata: Metadata = {
 
 const TAX_BENEFITS = [
   {
-    title: "50% Tax Exemption",
-    desc: "All contributions are eligible for 50% deduction under Section 80G(5) of the Income Tax Act, 1961.",
+    title: "80G Tax Exemption",
+    desc: "Neev Welfare Foundation is registered under Section 80G of the Income Tax Act, 1961.",
   },
   {
     title: "Instant Digital Receipt",
@@ -40,7 +40,7 @@ const TAX_BENEFITS = [
 const DONATION_FAQS = [
   {
     q: "Why is my PAN required for 80G tax exemption?",
-    a: "Under the guidelines issued by the Central Board of Direct Taxes (CBDT), all non-profits must report the donor's Permanent Account Number (PAN) in Form 10BD for the tax deduction to automatically populate in your Annual Information Statement (AIS).",
+    a: "Under the guidelines issued by the Central Board of Direct Taxes (CBDT), all non-profits must report the donor's Permanent Account Number (PAN) in Form 10BD for the official donation certificate to reflect in your Annual Information Statement (AIS).",
   },
   {
     q: "When will I receive my 80G tax exemption certificate?",

@@ -52,7 +52,7 @@ Neevwelfare/
 │   ├── get-involved/
 │   │   └── page.tsx              # Volunteer & CSR (Drives RSVP, application form, CSR deck)
 │   ├── donate/
-│   │   └── page.tsx              # Donate (80G Tax-deductible portal, PAN verification, bank details)
+│   │   └── page.tsx              # Donate (80G donation portal, PAN verification)
 │   ├── news/
 │   │   └── page.tsx              # Field Updates (Stories of change, category filter, article reader)
 │   └── contact/

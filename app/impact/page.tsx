@@ -201,7 +201,7 @@ export default function ImpactPage() {
               Partner with us to scale this impact across 100 villages
             </h3>
             <p className="text-xs sm:text-sm text-slate-300 max-w-xl">
-              100% of your contribution is eligible for 50% tax deduction under Section 80G.
+              Neev Welfare Foundation is a registered Section 8 non-profit with 80G tax exemption.
             </p>
           </div>
 

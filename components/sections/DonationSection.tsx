@@ -205,12 +205,6 @@ export function DonationSection({ showTitle = true }: DonationSectionProps) {
                     </p>
                   )}
                 </div>
-
-                {/* Statutory 80G Tax Deduction Notice */}
-                <div className="mt-3 p-3 rounded-xl bg-emerald-50/70 border border-emerald-200/60 text-xs text-emerald-900 flex items-center gap-2">
-                  <ShieldCheck className="w-4 h-4 text-[#00873e] shrink-0" />
-                  <span>Eligible for 50% deduction from taxable income under Section 80G</span>
-                </div>
               </div>
 
               {/* Program Allocation Cause */}
@@ -391,7 +385,7 @@ export function DonationSection({ showTitle = true }: DonationSectionProps) {
                 Section 80G Tax Exemption
               </h4>
               <p className="text-xs text-slate-300 leading-relaxed">
-                Indian tax residents are entitled to claim 50% deduction of their donated amount from taxable income under Section 80G. Official Form 10BE certificate is issued promptly.
+                Neev Welfare Foundation is registered under Section 80G of the Income Tax Act, 1961. Official 80G donation receipts are issued for all eligible contributions.
               </p>
             </div>
           </div>

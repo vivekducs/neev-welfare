@@ -68,7 +68,7 @@ export function DonationConfirmModal({
               Confirm Contribution
             </h3>
             <p className="text-xs text-slate-500">
-              Eligible for 50% Tax Deduction under Section 80G
+              Tax Exemption under Section 80G
             </p>
           </div>
         </div>

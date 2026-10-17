@@ -39,7 +39,7 @@ const GOVERNANCE_PILLARS = [
     icon: ShieldCheck,
     title: "12A & 80G Certified",
     description:
-      "Certified under Sections 12A and 80G(5) of the Income Tax Act, 1961, providing 50% tax deductions to individual and corporate donors across India.",
+      "Certified under Sections 12A and 80G(5) of the Income Tax Act, 1961, ensuring institutional transparency and statutory compliance.",
   },
   {
     icon: Award,

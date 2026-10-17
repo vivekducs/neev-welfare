@@ -297,8 +297,8 @@ export const IMPACT_STATS: ImpactStat[] = [
   {
     value: 100,
     suffix: "%",
-    label: "Tax Deductible",
-    sublabel: "Section 80G certified transparent nonprofit governance",
+    label: "80G Certified",
+    sublabel: "Registered Section 8 nonprofit governance",
     iconName: "ShieldCheck",
   },
 ];
@@ -437,7 +437,7 @@ export const FAQS: FaqItem[] = [
   {
     question: "Is my donation eligible for 80G tax exemption?",
     answer:
-      "Yes, 100%! Neev Welfare Foundation is a registered Section 8 nonprofit organization with valid 80G and 12A certification from the Income Tax Department of India. Indian tax-paying donors receive an official 80G tax certificate immediately via email, entitling them to claim deductions under Section 80G.",
+      "Yes! Neev Welfare Foundation is a registered Section 8 non-profit organization with valid 80G and 12A certification from the Income Tax Department of India. Donors receive an official 80G donation receipt via email for their contribution.",
   },
   {
     question: "How can I volunteer with Neev Welfare Foundation?",
