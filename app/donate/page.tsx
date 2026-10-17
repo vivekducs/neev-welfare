@@ -1,0 +1,153 @@
+import type { Metadata } from "next";
+import { Suspense } from "react";
+import {
+  ShieldCheck,
+  CheckCircle2,
+  Heart,
+  FileCheck,
+  HelpCircle,
+  Building,
+  CreditCard,
+  QrCode,
+  Lock,
+} from "lucide-react";
+import { SITE_CONFIG } from "@/lib/constants";
+import { DonationSection } from "@/components/sections/DonationSection";
+
+export const metadata: Metadata = {
+  title: "Donate Online | 80G Tax-Exempt Contribution",
+  description:
+    "Make a 50% tax-exempt donation to Neev Welfare Foundation under Section 80G of the Income Tax Act. Support digital classrooms, women livelihoods, and rural clinics.",
+  alternates: {
+    canonical: `${SITE_CONFIG.url}/donate/`,
+  },
+};
+
+const TAX_BENEFITS = [
+  {
+    title: "50% Tax Exemption",
+    desc: "All contributions are eligible for 50% deduction under Section 80G(5) of the Income Tax Act, 1961.",
+  },
+  {
+    title: "Instant Digital Receipt",
+    desc: "A digitally signed 80G certificate with your PAN details is dispatched to your registered email immediately.",
+  },
+  {
+    title: "100% Cashless Transparency",
+    desc: "Donations are processed directly via secure UPI QR, net banking, or NEFT/RTGS to our designated institutional account.",
+  },
+  {
+    title: "Statutory Reporting",
+    desc: "Annual Form 10BD is filed directly with the Income Tax Department so your donation reflects in your AIS / Form 26AS.",
+  },
+];
+
+const DONATION_FAQS = [
+  {
+    q: "Why is my PAN required for 80G tax exemption?",
+    a: "Under the guidelines issued by the Central Board of Direct Taxes (CBDT), all non-profits must report the donor's Permanent Account Number (PAN) in Form 10BD for the tax deduction to automatically populate in your Annual Information Statement (AIS).",
+  },
+  {
+    q: "When will I receive my 80G tax exemption certificate?",
+    a: "Your formal 80G donation receipt is generated and emailed to you within 24 to 48 hours of payment verification. For monthly recurring donors, a consolidated annual tax certificate is issued at the close of the financial year.",
+  },
+  {
+    q: "Can I donate directly via NEFT, RTGS, or IMPS?",
+    a: "Yes. You can transfer directly to our institutional account with HDFC Bank: Account Name: Neev Welfare Foundation, Account No: 50200085437887, IFSC: HDFC0000244. Please email your UTR/transaction reference to contact@neevwelfare.org to receive your 80G receipt.",
+  },
+  {
+    q: "Can international donors contribute?",
+    a: "Currently, Neev Welfare Foundation accepts donations from Indian bank accounts, Indian cards, and Indian UPI IDs. For foreign currency or NRI contributions, please contact our administrative desk.",
+  },
+];
+
+export default function DonatePage() {
+  return (
+    <div className="pt-24 md:pt-32 pb-20">
+      {/* Header Banner */}
+      <section className="bg-gradient-to-b from-slate-50 to-white py-12 md:py-16 border-b border-slate-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-[#00873e] text-xs font-bold uppercase tracking-wider mb-4">
+            <ShieldCheck className="w-4 h-4" />
+            <span>80G TAX-EXEMPT CONTRIBUTIONS • SECTION 8 REGISTERED</span>
+          </div>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-[#001c37] font-heading tracking-tight">
+            Support Grassroots Transformation
+          </h1>
+          <p className="mt-4 text-sm sm:text-base text-slate-600 max-w-2xl mx-auto leading-relaxed">
+            Your generous contribution directly funds rural digital classrooms, women-run micro-enterprises, preventive health camps, and native afforestation across Bundelkhand.
+          </p>
+        </div>
+      </section>
+
+      {/* Tax Benefits Strip */}
+      <section className="py-8 bg-emerald-50/40 border-b border-emerald-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {TAX_BENEFITS.map((item, idx) => (
+              <div
+                key={idx}
+                className="p-4 rounded-xl bg-white border border-emerald-200/60 shadow-sm flex items-start gap-3"
+              >
+                <CheckCircle2 className="w-5 h-5 text-[#00873e] shrink-0 mt-0.5" />
+                <div>
+                  <h4 className="font-heading font-black text-xs text-[#001c37]">
+                    {item.title}
+                  </h4>
+                  <p className="text-[11px] text-slate-600 mt-0.5 leading-snug">
+                    {item.desc}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Main Interactive Donation Portal (Suspense wrapped) */}
+      <Suspense
+        fallback={
+          <div className="py-24 text-center">
+            <div className="inline-block animate-spin rounded-full h-8 w-8 border-4 border-[#00873e] border-t-transparent" />
+            <p className="mt-2 text-xs text-slate-500 font-bold">
+              Loading secure donation portal...
+            </p>
+          </div>
+        }
+      >
+        <DonationSection showTitle={false} />
+      </Suspense>
+
+      {/* FAQs on Donations */}
+      <section className="py-16 md:py-20 bg-slate-50 border-t border-slate-200/80">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-200/80 text-[#001c37] text-xs font-bold uppercase tracking-wider mb-2">
+              <HelpCircle className="w-4 h-4" />
+              <span>DONOR ASSISTANCE</span>
+            </div>
+            <h2 className="text-2xl sm:text-3xl font-black text-[#001c37] font-heading tracking-tight">
+              Frequently Asked Questions on Giving
+            </h2>
+          </div>
+
+          <div className="space-y-4">
+            {DONATION_FAQS.map((faq, idx) => (
+              <div
+                key={idx}
+                className="p-6 rounded-2xl bg-white border border-slate-200/80 shadow-sm"
+              >
+                <h3 className="font-heading font-black text-sm sm:text-base text-[#001c37] mb-2">
+                  {faq.q}
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  {faq.a}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}

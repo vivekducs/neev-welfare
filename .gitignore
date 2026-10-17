@@ -17,10 +17,15 @@ npm-debug.log*
 # Local Backups
 *.backup.*
 
-# Design mockup & reference files
-Design.svg
-Footer.pdf
-Header.pdf
-Header.png
-Section - 1. HERO SECTION.png
-*.pdf
+# Dependencies
+node_modules/
+/.pnp
+.pnp.js
+
+# Next.js build & export output
+.next/
+out/
+build/
+
+# Next.js env
+.env*.local
