@@ -232,4 +232,4 @@ When built, this file is automatically placed at the root of `out/CNAME`, instru
 - **Income Tax 80G Approval**: AABCN7313DF20231  
 - **Income Tax 12A Registration**: AABCN7313DE20231  
 - **Registered Address**: HIG-44, Deen Dayal Nagar, Jhansi, Uttar Pradesh - 284003, India  
-- **Email**: [contact@neevwelfare.org](mailto:contact@neevwelfare.org) | **Phone**: +91 96960 99499
+- **Email**: [info@neevwelfare.org](mailto:info@neevwelfare.org) | **Phone**: +91 96960 99499

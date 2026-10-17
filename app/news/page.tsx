@@ -52,7 +52,7 @@ export default function NewsPage() {
             </div>
 
             <a
-              href="mailto:contact@neevwelfare.org?subject=Press%20or%20Media%20Inquiry%20-%20Neev%20Welfare"
+              href="mailto:info@neevwelfare.org?subject=Press%20or%20Media%20Inquiry%20-%20Neev%20Welfare"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#001c37] hover:bg-[#0a2540] text-white text-xs font-bold shadow-md transition-all hover:scale-105 shrink-0"
             >
               <Mail className="w-4 h-4 text-emerald-400" />

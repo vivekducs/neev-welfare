@@ -53,7 +53,7 @@ const DONATION_FAQS = [
   },
   {
     q: "Can I donate directly via NEFT, RTGS, or IMPS?",
-    a: "Yes. You can transfer directly to our institutional account with HDFC Bank: Account Name: Neev Welfare Foundation, Account No: 50200085437887, IFSC: HDFC0000244. Please email your UTR/transaction reference to contact@neevwelfare.org to receive your 80G receipt.",
+    a: "Yes. You can transfer directly to our institutional account with HDFC Bank: Account Name: Neev Welfare Foundation, Account No: 50200085437887, IFSC: HDFC0000244. Please email your UTR/transaction reference to info@neevwelfare.org to receive your 80G receipt.",
   },
   {
     q: "Can international donors contribute?",

@@ -14,7 +14,7 @@ import { ContactSection } from "@/components/sections/ContactSection";
 export const metadata: Metadata = {
   title: "Contact Us | Jhansi Head Office & Field Coordination",
   description:
-    "Get in touch with Neev Welfare Foundation. Visit our Jhansi head office, call +91 96960 99499, or email contact@neevwelfare.org for CSR, donations, and volunteer opportunities.",
+    "Get in touch with Neev Welfare Foundation. Visit our Jhansi head office, call +91 96960 99499, or email info@neevwelfare.org for CSR, donations, and volunteer opportunities.",
   alternates: {
     canonical: `${SITE_CONFIG.url}/contact/`,
   },

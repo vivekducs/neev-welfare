@@ -15,7 +15,7 @@ export const SITE_CONFIG = {
     address: "Garautha, Jhansi District, Bundelkhand, Uttar Pradesh - 284202, India",
     phone: "+91 96963 87400",
     phoneDisplay: "+91 96963 87400",
-    email: "contact@neevwelfare.org",
+    email: "info@neevwelfare.org",
     supportEmail: "info@neevwelfare.org",
     hours: "Monday – Saturday: 9:30 AM – 6:00 PM IST",
   },
