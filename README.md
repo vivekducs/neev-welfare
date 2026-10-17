@@ -74,13 +74,13 @@ Neevwelfare/
 │   ├── modals/
 │   │   ├── FocusAreaModal.tsx    # Detailed programmatic scope dialog
 │   │   ├── NewsArticleModal.tsx  # Full story reader dialog
-│   │   ├── DonationConfirmModal.tsx # UPI QR code and bank transfer modal
+│   │   ├── DonationConfirmModal.tsx # Contribution confirmation and 80G receipt modal
 │   │   └── CsrDeckModal.tsx      # Corporate CSR presentation download modal
 │   ├── sections/                 # Modular page sections
 │   └── ui/
 │       └── Toast.tsx             # Toast notification system
 ├── lib/
-│   ├── constants.ts              # Organization metadata, bank accounts, navigation config
+│   ├── constants.ts              # Organization metadata, statutory identifiers, navigation config
 │   ├── data.ts                   # Data models for interventions, leadership, news, events
 │   └── utils.ts                  # Utility functions (cn class merge, formatCurrency)
 ├── public/
@@ -107,7 +107,7 @@ Neevwelfare/
 | `/team/` | Leadership & Team | Board of Directors, Core Leadership Team, and institutional governance framework |
 | `/impact/` | Verified Impact | Animated KPI counters, milestone timeline, United Nations SDG alignment |
 | `/get-involved/` | Get Involved | Volunteer application form, community drives RSVP, Corporate CSR partnerships |
-| `/donate/` | 80G Donation | Live tax calculator, preset tiers, PAN verification, UPI QR & Bank NEFT |
+| `/donate/` | 80G Donation | Live tax calculator, preset tiers, PAN verification, statutory 80G certification |
 | `/news/` | Field Updates | News articles with category filters, full reading modals, media inquiry desk |
 | `/contact/` | Contact Us | Direct message form, Jhansi head office details, transit & Google Maps directions |
 | `/not-found` | 404 Error | Custom 404 page with navigation links back to key sections |

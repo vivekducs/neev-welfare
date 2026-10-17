@@ -29,3 +29,4 @@ build/
 
 # Next.js env
 .env*.local
+AGENTS.md

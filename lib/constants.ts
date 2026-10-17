@@ -26,30 +26,23 @@ export const SITE_CONFIG = {
     linkedin: "https://linkedin.com/company/neev-welfare-foundation",
     youtube: "https://youtube.com/@neevwelfare",
   },
-  bankDetails: {
-    bankName: "State Bank of India",
-    accountName: "NEEV WELFARE FOUNDATION",
-    accountNumber: "41289012345",
-    ifsc: "SBIN0001234",
-    branch: "Garautha Branch, Jhansi",
-    upiId: "neevwelfare@sbi",
-  },
 };
 
 export interface NavItem {
   label: string;
+  shortLabel?: string;
   href: string;
   description?: string;
   badge?: string;
 }
 
 export const NAV_LINKS: NavItem[] = [
-  { label: "Home", href: "/" },
-  { label: "About Us", href: "/about" },
-  { label: "Our Work", href: "/programs" },
-  { label: "Leadership & Team", href: "/team" },
-  { label: "Our Impact", href: "/impact" },
-  { label: "Get Involved", href: "/get-involved" },
-  { label: "News & Updates", href: "/news" },
-  { label: "Contact", href: "/contact" },
+  { label: "Home", shortLabel: "Home", href: "/" },
+  { label: "About Us", shortLabel: "About", href: "/about" },
+  { label: "Our Programs", shortLabel: "Programs", href: "/programs" },
+  { label: "Leadership & Team", shortLabel: "Team", href: "/team" },
+  { label: "Our Impact", shortLabel: "Impact", href: "/impact" },
+  { label: "Get Involved", shortLabel: "Get Involved", href: "/get-involved" },
+  { label: "News & Updates", shortLabel: "News", href: "/news" },
+  { label: "Contact Us", shortLabel: "Contact", href: "/contact" },
 ];

@@ -3,13 +3,8 @@ import { Suspense } from "react";
 import {
   ShieldCheck,
   CheckCircle2,
-  Heart,
   FileCheck,
   HelpCircle,
-  Building,
-  CreditCard,
-  QrCode,
-  Lock,
 } from "lucide-react";
 import { SITE_CONFIG } from "@/lib/constants";
 import { DonationSection } from "@/components/sections/DonationSection";
@@ -34,7 +29,7 @@ const TAX_BENEFITS = [
   },
   {
     title: "100% Cashless Transparency",
-    desc: "Donations are processed directly via secure UPI QR, net banking, or NEFT/RTGS to our designated institutional account.",
+    desc: "Donations are recorded transparently and audited in accordance with Section 8 statutory non-profit regulations.",
   },
   {
     title: "Statutory Reporting",
@@ -52,12 +47,12 @@ const DONATION_FAQS = [
     a: "Your formal 80G donation receipt is generated and emailed to you within 24 to 48 hours of payment verification. For monthly recurring donors, a consolidated annual tax certificate is issued at the close of the financial year.",
   },
   {
-    q: "Can I donate directly via NEFT, RTGS, or IMPS?",
-    a: "Yes. You can transfer directly to our institutional account with HDFC Bank: Account Name: Neev Welfare Foundation, Account No: 50200085437887, IFSC: HDFC0000244. Please email your UTR/transaction reference to info@neevwelfare.org to receive your 80G receipt.",
+    q: "Can I donate directly via NEFT, RTGS, or Wire Transfer?",
+    a: "Yes. For direct institutional bank transfers, RTGS/NEFT instructions, or corporate CSR donations, please contact our official finance desk at info@neevwelfare.org or +91 96963 87400. Our finance team will provide the verified statutory details and issue your 80G tax receipt promptly.",
   },
   {
     q: "Can international donors contribute?",
-    a: "Currently, Neev Welfare Foundation accepts donations from Indian bank accounts, Indian cards, and Indian UPI IDs. For foreign currency or NRI contributions, please contact our administrative desk.",
+    a: "Currently, Neev Welfare Foundation accepts donations from Indian bank accounts and Indian donors. For foreign currency or NRI contributions, please contact our administrative desk at info@neevwelfare.org.",
   },
 ];
 

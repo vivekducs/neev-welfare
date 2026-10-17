@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
-import { Heart, ShieldCheck, CheckCircle2, QrCode, Building, Lock } from "lucide-react";
+import { Heart, ShieldCheck, CheckCircle2, Lock, Mail, Phone, FileText, Building2 } from "lucide-react";
 import { SITE_CONFIG } from "@/lib/constants";
 import { formatCurrency } from "@/lib/utils";
 import { DonationConfirmModal, type DonationData } from "@/components/modals/DonationConfirmModal";
@@ -314,61 +314,77 @@ export function DonationSection({ showTitle = true }: DonationSectionProps) {
             </form>
           </div>
 
-          {/* Right Column: Bank Transfer & Direct UPI Snapshot */}
+          {/* Right Column: Statutory Credentials & Bank Transfer Support */}
           <div className="lg:col-span-5 space-y-6">
-            {/* Direct Bank Transfer Card */}
+            {/* Statutory Compliance Card */}
             <div className="bg-white rounded-3xl p-6 sm:p-7 border border-slate-200/90 shadow-sm space-y-4">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-xl bg-emerald-50 text-[#00873e] flex items-center justify-center">
-                  <Building className="w-5 h-5" />
+                  <Building2 className="w-5 h-5" />
                 </div>
                 <div>
                   <h3 className="font-heading font-black text-base text-[#001c37]">
-                    Direct NEFT / RTGS / IMPS
+                    Official Organization Credentials
                   </h3>
-                  <p className="text-xs text-slate-500">Official Foundation Bank Account</p>
+                  <p className="text-xs text-slate-500">Government Registered Section 8 NGO</p>
                 </div>
               </div>
 
-              <div className="bg-slate-50 rounded-2xl p-4 border border-slate-200/80 space-y-2 text-xs text-slate-700">
-                <div className="flex justify-between">
-                  <span className="text-slate-500">Account Name:</span>
-                  <span className="font-bold text-[#001c37]">{SITE_CONFIG.bankDetails.accountName}</span>
+              <div className="bg-slate-50 rounded-2xl p-4 border border-slate-200/80 space-y-2.5 text-xs text-slate-700">
+                <div className="flex justify-between items-center py-1 border-b border-slate-200/60">
+                  <span className="text-slate-500">Legal Entity:</span>
+                  <span className="font-bold text-[#001c37] text-right">Section 8 Non-Profit Organization</span>
                 </div>
-                <div className="flex justify-between">
-                  <span className="text-slate-500">Bank Name:</span>
-                  <span className="font-semibold">{SITE_CONFIG.bankDetails.bankName}</span>
+                <div className="flex justify-between items-center py-1 border-b border-slate-200/60">
+                  <span className="text-slate-500">CIN:</span>
+                  <span className="font-mono font-bold text-[#001c37]">{SITE_CONFIG.cin}</span>
                 </div>
-                <div className="flex justify-between">
-                  <span className="text-slate-500">Account Number:</span>
-                  <span className="font-mono font-bold text-[#00873e]">{SITE_CONFIG.bankDetails.accountNumber}</span>
+                <div className="flex justify-between items-center py-1 border-b border-slate-200/60">
+                  <span className="text-slate-500">NITI Aayog Darpan:</span>
+                  <span className="font-mono font-bold text-[#00873e]">{SITE_CONFIG.ngoDarpan}</span>
                 </div>
-                <div className="flex justify-between">
-                  <span className="text-slate-500">IFSC Code:</span>
-                  <span className="font-mono font-bold text-[#001c37]">{SITE_CONFIG.bankDetails.ifsc}</span>
+                <div className="flex justify-between items-center py-1 border-b border-slate-200/60">
+                  <span className="text-slate-500">80G Approval:</span>
+                  <span className="font-mono font-semibold text-slate-800">AABCN7313DF20231</span>
                 </div>
-                <div className="flex justify-between">
-                  <span className="text-slate-500">Branch:</span>
-                  <span className="font-semibold">{SITE_CONFIG.bankDetails.branch}</span>
+                <div className="flex justify-between items-center py-1">
+                  <span className="text-slate-500">12A Registration:</span>
+                  <span className="font-mono font-semibold text-slate-800">AABCN7313DE20231</span>
                 </div>
               </div>
             </div>
 
-            {/* UPI & QR Code Snapshot */}
-            <div className="bg-white rounded-3xl p-6 sm:p-7 border border-slate-200/90 shadow-sm flex items-center gap-5">
-              <div className="w-16 h-16 rounded-2xl bg-slate-100 border border-slate-200 flex items-center justify-center text-slate-700 shrink-0">
-                <QrCode className="w-10 h-10 text-[#001c37]" />
-              </div>
-              <div className="space-y-1">
-                <h4 className="font-heading font-black text-sm text-[#001c37]">
-                  Instant UPI Contribution
-                </h4>
-                <p className="text-xs text-slate-500">
-                  Pay directly using Google Pay, PhonePe, or Paytm:
-                </p>
-                <div className="inline-block px-2.5 py-1 rounded-md bg-emerald-50 text-emerald-800 font-mono text-xs font-bold border border-emerald-200">
-                  {SITE_CONFIG.bankDetails.upiId}
+            {/* Direct Bank Wire & NEFT Transfer Desk */}
+            <div className="bg-white rounded-3xl p-6 sm:p-7 border border-slate-200/90 shadow-sm space-y-3">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-xl bg-sky-50 text-sky-700 flex items-center justify-center">
+                  <FileText className="w-5 h-5" />
                 </div>
+                <div>
+                  <h4 className="font-heading font-black text-sm text-[#001c37]">
+                    Direct NEFT / RTGS Wire Transfers
+                  </h4>
+                  <p className="text-xs text-slate-500">Corporate & Individual Contributions</p>
+                </div>
+              </div>
+              <p className="text-xs text-slate-600 leading-relaxed">
+                For direct bank wire instructions, CSR grants, or custom donation mandates, please contact our official finance desk:
+              </p>
+              <div className="pt-2 border-t border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs">
+                <a
+                  href={`mailto:${SITE_CONFIG.contact.email}`}
+                  className="inline-flex items-center gap-1.5 font-bold text-[#00873e] hover:underline"
+                >
+                  <Mail className="w-3.5 h-3.5" />
+                  <span>{SITE_CONFIG.contact.email}</span>
+                </a>
+                <a
+                  href={`tel:${SITE_CONFIG.contact.phone.replace(/\s+/g, "")}`}
+                  className="inline-flex items-center gap-1.5 font-bold text-slate-700 hover:text-[#00873e]"
+                >
+                  <Phone className="w-3.5 h-3.5" />
+                  <span>{SITE_CONFIG.contact.phone}</span>
+                </a>
               </div>
             </div>
 

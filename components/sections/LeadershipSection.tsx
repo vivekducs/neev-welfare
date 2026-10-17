@@ -42,7 +42,7 @@ export function LeadershipSection({ showTitle = true }: LeadershipSectionProps) 
           </div>
         </div>
 
-        {/* 2. Core Leadership Team (Focalyt Reference Style) */}
+        {/* 2. Core Leadership Team */}
         <div className="mt-16">
           {/* Centered Divider with Capsule Pill */}
           <div className="relative flex items-center justify-center my-10">

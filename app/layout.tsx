@@ -4,6 +4,7 @@ import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { BackToTop } from "@/components/layout/BackToTop";
+import { MobileBottomNav } from "@/components/layout/MobileBottomNav";
 import { ToastProvider } from "@/components/ui/Toast";
 import { SITE_CONFIG } from "@/lib/constants";
 
@@ -133,9 +134,10 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col bg-white text-slate-800">
         <ToastProvider>
           <Header />
-          <main className="flex-1">{children}</main>
+          <main className="flex-1 pb-16 lg:pb-0">{children}</main>
           <Footer />
           <BackToTop />
+          <MobileBottomNav />
         </ToastProvider>
       </body>
     </html>
