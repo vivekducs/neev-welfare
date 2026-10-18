@@ -216,14 +216,12 @@ export const CORE_LEADERSHIP_TEAM: TeamLead[] = [
   {
     name: "Mr. Sailendra Kumar",
     role: "Lead - HR & Compliance",
-    initials: "SK",
-    gradient: "from-[#581c87] to-[#6b21a8]",
+    image: "/images/shailendra.jpeg",
   },
   {
     name: "Mr. Prabhat Singh Chauhan",
     role: "Lead - Industry Partnerships",
-    initials: "PSC",
-    gradient: "from-[#021427] to-[#062b53]",
+    image: "/images/Prabhat.jpeg",
   },
   {
     name: "Mr. Vivek Kumar",
