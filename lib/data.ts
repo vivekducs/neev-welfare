@@ -201,20 +201,17 @@ export const CORE_LEADERSHIP_TEAM: TeamLead[] = [
   {
     name: "Mr. Anuj Pal",
     role: "Lead - Corporate Relations & Fundraising",
-    initials: "AK",
-    gradient: "from-[#0f172a] to-[#1e293b]",
+    image: "/images/anuj.jpeg",
   },
   {
     name: "Mr. Dharmendra Kumar",
     role: "Lead - Operations",
-    initials: "DK",
-    gradient: "from-[#7c2d12] to-[#9a3412]",
+    image: "/images/dharmendra.jpeg",
   },
   {
     name: "Mr. Himanshu Negi",
     role: "Lead - Communications & Branding",
-    initials: "HN",
-    gradient: "from-[#0f766e] to-[#115e59]",
+    image: "/images/himanshu.jpeg",
   },
   {
     name: "Mr. Sailendra Kumar",

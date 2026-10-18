@@ -20,7 +20,6 @@ export function TeamLeadCard({ lead }: TeamLeadCardProps) {
               fill
               sizes="(max-width: 640px) 192px, 208px"
               className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
-              priority={lead.name.includes("Vivek")}
             />
             {/* Subtle Gradient Vignette at bottom */}
             <div className="absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
