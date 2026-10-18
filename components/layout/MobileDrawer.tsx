@@ -71,11 +71,14 @@ export function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
               />
             </div>
             <div className="flex flex-col">
-              <span className="font-extrabold text-sm text-[#001c37] leading-tight">
-                NEEV WELFARE
+              <span className="font-extrabold text-sm text-[#001c37] font-heading leading-tight">
+                NEEV WELFARE FOUNDATION
               </span>
-              <span className="text-[10px] font-semibold text-[#00873e] uppercase">
-                Section 8 Non-Profit
+              <span className="text-[9.5px] font-semibold text-slate-500 mt-0.5">
+                CIN: {SITE_CONFIG.cin}
+              </span>
+              <span className="text-[9px] text-slate-500">
+                NITI Aayog Darpan: {SITE_CONFIG.ngoDarpan}
               </span>
             </div>
           </div>

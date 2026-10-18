@@ -57,11 +57,11 @@ export function HeroSection() {
             <div className="pt-6 border-t border-slate-200/80 flex flex-wrap items-center justify-center lg:justify-start gap-6 text-xs text-slate-600">
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-[#00873e]" />
-                <span className="font-semibold text-slate-800">4,200+ Children</span> Supported
+                <span className="font-semibold text-slate-800">500+ Children</span> Supported
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-[#00873e]" />
-                <span className="font-semibold text-slate-800">3,500+ Women</span> Empowered
+                <span className="font-semibold text-slate-800">350+ Women</span> Empowered
               </div>
               <div className="flex items-center gap-2">
                 <ShieldCheck className="w-4 h-4 text-[#00873e]" />

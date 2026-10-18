@@ -45,7 +45,7 @@ const GOVERNANCE_PILLARS = [
     icon: Award,
     title: "NGO Darpan Registered",
     description:
-      "Registered on NITI Aayog's NGO Darpan portal (UP/2023/0360721), ensuring institutional transparency and eligibility for public-private initiatives.",
+      `Registered on NITI Aayog's NGO Darpan portal (${SITE_CONFIG.ngoDarpan}), ensuring institutional transparency and eligibility for public-private initiatives.`,
   },
 ];
 

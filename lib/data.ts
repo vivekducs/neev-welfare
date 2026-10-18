@@ -19,14 +19,14 @@ export const FOCUS_AREAS: FocusArea[] = [
     image: "/images/v26_1754.png",
     causeOption: "Child Welfare & Education",
     description:
-      "Every child deserves foundational care, safe classrooms, and holistic development. In rural Bundelkhand and Uttar Pradesh, we support over 4,200 children with school kits, remedial coaching, and regular pediatric health checkups.",
+      "Every child deserves foundational care, safe classrooms, and holistic development. In rural Bundelkhand and Uttar Pradesh, we support over 500 children with school kits, remedial coaching, and regular pediatric health checkups.",
     highlights: [
       "Deployment of digital learning kits & classroom supplies",
       "Remedial after-school tutoring for slow-paced learners",
       "Quarterly pediatric nutrition monitoring & health camps",
       "Child protection & anti-child-labor grassroots drives",
     ],
-    impactMetric: "4,200+ Children Supported",
+    impactMetric: "500+ Children Supported",
   },
   {
     id: "youth",
@@ -60,7 +60,7 @@ export const FOCUS_AREAS: FocusArea[] = [
       "Financial literacy and zero-collateral micro-credit facilitation",
       "Legal rights, maternal wellness, and gender parity community workshops",
     ],
-    impactMetric: "3,500+ Women Economically Empowered",
+    impactMetric: "350+ Women Economically Empowered",
   },
   {
     id: "digital",
@@ -94,7 +94,7 @@ export const FOCUS_AREAS: FocusArea[] = [
       "Menstrual hygiene education & free biodegradable sanitary pad distribution",
       "Preventive diagnostic screenings for diabetes, anemia, and hypertension",
     ],
-    impactMetric: "15,000+ Screenings Conducted",
+    impactMetric: "700+ Screenings Conducted",
   },
   {
     id: "community",
@@ -111,7 +111,7 @@ export const FOCUS_AREAS: FocusArea[] = [
       "Community drinking water points & solar street lamp installations",
       "Youth leadership councils for village dispute resolution and public development",
     ],
-    impactMetric: "40+ Village Ecosystems Transformed",
+    impactMetric: "25+ Village Ecosystems Transformed",
   },
   {
     id: "environment",
@@ -123,12 +123,12 @@ export const FOCUS_AREAS: FocusArea[] = [
     description:
       "Restoring native biodiversity and ground water reserves in Bundelkhand’s drought-prone landscape through mass community afforestation and rainwater harvesting.",
     highlights: [
-      "Mass plantation drives with 10,000+ indigenous trees planted",
+      "Mass plantation drives with 1,200+ indigenous trees planted",
       "Check-dam restoration and rooftop rainwater harvesting units",
       "Zero-waste village campaigns and plastic recycling incentives",
       "Solar lighting and clean renewable energy awareness drives",
     ],
-    impactMetric: "10,000+ Native Saplings Thriving",
+    impactMetric: "1,200+ Native Saplings Thriving",
   },
   {
     id: "innovation",
@@ -241,7 +241,7 @@ export interface ImpactStat {
 
 export const IMPACT_STATS: ImpactStat[] = [
   {
-    value: 4200,
+    value: 500,
     suffix: "+",
     label: "Children Supported",
     sublabel: "Foundational schooling kits & remedial education",
@@ -255,14 +255,14 @@ export const IMPACT_STATS: ImpactStat[] = [
     iconName: "Briefcase",
   },
   {
-    value: 3500,
+    value: 350,
     suffix: "+",
     label: "Women Empowered",
     sublabel: "Self-help collectives & micro-enterprises launched",
     iconName: "Users",
   },
   {
-    value: 15000,
+    value: 700,
     suffix: "+",
     label: "Health Screenings",
     sublabel: "Rural doorstep mobile clinical diagnostic camps",
@@ -276,14 +276,14 @@ export const IMPACT_STATS: ImpactStat[] = [
     iconName: "Laptop",
   },
   {
-    value: 10000,
+    value: 1200,
     suffix: "+",
     label: "Native Trees Planted",
     sublabel: "Ecological regeneration across village commons",
     iconName: "Trees",
   },
   {
-    value: 40,
+    value: 25,
     suffix: "+",
     label: "Villages Transformed",
     sublabel: "Empowering panchayats with clean civic facilities",
@@ -359,7 +359,7 @@ export const MISSION_PILLARS: MissionPillar[] = [
     description:
       "Delivering quality primary education, STEM kits, digital literacy, and holistic mentorship to children in remote villages.",
     iconName: "GraduationCap",
-    stat: "4,200+ Students",
+    stat: "500+ Students",
   },
   {
     title: "Preventive Healthcare",
@@ -367,7 +367,7 @@ export const MISSION_PILLARS: MissionPillar[] = [
     description:
       "Organizing mobile health clinics, pediatric nutrition screenings, and free maternal health diagnostic camps.",
     iconName: "HeartPulse",
-    stat: "15,000+ Screenings",
+    stat: "700+ Screenings",
   },
   {
     title: "Women Self-Reliance",
@@ -375,7 +375,7 @@ export const MISSION_PILLARS: MissionPillar[] = [
     description:
       "Incubating women self-help collectives, micro-enterprises, vocational textile training, and financial literacy.",
     iconName: "Users",
-    stat: "3,500+ Women",
+    stat: "350+ Women",
   },
   {
     title: "Ecological Stewardship",
@@ -383,7 +383,7 @@ export const MISSION_PILLARS: MissionPillar[] = [
     description:
       "Spearheading native afforestation, rainwater harvesting structures, clean solar adoption, and civic sustainability.",
     iconName: "Trees",
-    stat: "10,000+ Trees",
+    stat: "1,200+ Trees",
   },
 ];
 

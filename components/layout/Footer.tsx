@@ -69,10 +69,10 @@ export function Footer() {
               </div>
               <div>
                 <span className="block text-white font-extrabold text-base tracking-tight font-heading">
-                  NEEV WELFARE
+                  NEEV WELFARE FOUNDATION
                 </span>
-                <span className="block text-[10px] text-[#00873e] font-bold tracking-widest uppercase">
-                  FOUNDATION
+                <span className="block text-[10px] text-slate-400 font-semibold tracking-wider mt-0.5">
+                  CIN: {SITE_CONFIG.cin}
                 </span>
               </div>
             </div>

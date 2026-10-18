@@ -177,7 +177,7 @@ export default function AboutPage() {
                 MCA CSR-1 Registration
               </h3>
               <p className="text-xs text-slate-600 leading-relaxed">
-                Registered on the MCA MCA21 portal (Reg: UP/2022/0329184) to execute corporate CSR programs under Schedule VII of the Companies Act, 2013.
+                Registered on the MCA MCA21 portal (Reg: {SITE_CONFIG.ngoDarpan}) to execute corporate CSR programs under Schedule VII of the Companies Act, 2013.
               </p>
               <div className="pt-2 text-xs font-semibold text-slate-800">
                 Audited Social Balance Sheets

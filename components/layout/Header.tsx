@@ -50,11 +50,13 @@ export function Header() {
                 />
               </div>
               <div className="flex flex-col">
-                <span className="text-base sm:text-lg font-black tracking-tight text-[#001c37] leading-tight font-heading whitespace-nowrap">
-                  NEEV WELFARE
+                <span className="text-xs xs:text-sm sm:text-base md:text-lg font-black tracking-tight text-[#001c37] leading-tight font-heading whitespace-nowrap">
+                  NEEV WELFARE FOUNDATION
                 </span>
-                <span className="text-[9px] sm:text-[10px] font-bold tracking-widest text-[#00873e] uppercase whitespace-nowrap">
-                  FOUNDATION
+                <span className="text-[8.5px] xs:text-[9px] sm:text-[10px] font-semibold text-slate-500 tracking-tight leading-tight mt-0.5 whitespace-nowrap">
+                  CIN: <strong className="text-slate-700 font-semibold">{SITE_CONFIG.cin}</strong>{" "}
+                  <span className="text-slate-300">•</span>{" "}
+                  <span className="hidden sm:inline">NITI Aayog </span>Darpan ID: <strong className="text-slate-700 font-semibold">{SITE_CONFIG.ngoDarpan}</strong>
                 </span>
               </div>
             </Link>

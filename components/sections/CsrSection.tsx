@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { Building2, ShieldCheck, CheckCircle2, FileText, ArrowRight } from "lucide-react";
 import { CsrDeckModal } from "@/components/modals/CsrDeckModal";
+import { SITE_CONFIG } from "@/lib/constants";
 
 export function CsrSection() {
   const [isCsrModalOpen, setIsCsrModalOpen] = useState(false);
@@ -30,7 +31,7 @@ export function CsrSection() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-xs text-slate-200">
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-[#00873e]" />
-                  <span>MCA Form CSR-1 Approved (Reg: UP/2022/0329184)</span>
+                  <span>MCA Form CSR-1 Approved (Reg: {SITE_CONFIG.ngoDarpan})</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-[#00873e]" />

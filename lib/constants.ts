@@ -7,10 +7,10 @@ export const SITE_CONFIG = {
   url: "https://www.neevwelfare.org",
   ogImage: "/images/v26_1649.png",
   logo: "/images/v26_3521.png",
-  cin: "U85300UP2022NPL168924",
+  cin: "U88900UP2026NPL252980",
   registration: "Registered Section 8 Non-Profit Organization, Govt. of India",
   taxExemption: "100% Tax Exemption under Section 80G & 12A of the Income Tax Act",
-  ngoDarpan: "UP/2022/0329184",
+  ngoDarpan: "UP/2026/1222089",
   contact: {
     address: "Garautha, Jhansi District, Bundelkhand, Uttar Pradesh - 284202, India",
     phone: "+91 96963 87400",

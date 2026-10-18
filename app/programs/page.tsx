@@ -131,7 +131,7 @@ export default function ProgramsPage() {
               Looking to fund a high-impact program via CSR?
             </h3>
             <p className="text-xs sm:text-sm text-slate-300 max-w-xl">
-              Neev Welfare Foundation is registered on NGO Darpan (UP/2023/0360721) with full 80G and 12A tax exemption benefits.
+              Neev Welfare Foundation is registered on NGO Darpan ({SITE_CONFIG.ngoDarpan}) with full 80G and 12A tax exemption benefits.
             </p>
           </div>
 

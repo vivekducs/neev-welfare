@@ -201,8 +201,8 @@ The `public/CNAME` file binds `www.neevwelfare.org` to the GitHub Pages environm
 ## 9. Statutory Compliance & Contact
 
 &copy; 2026 Neev Welfare Foundation. All Rights Reserved.  
-- **Corporate Identity Number (CIN)**: U85300UP2022NPL168924  
-- **NITI Aayog NGO Darpan**: UP/2022/0329184  
+- **Corporate Identity Number (CIN)**: U88900UP2026NPL252980  
+- **NITI Aayog NGO Darpan**: UP/2026/1222089  
 - **Income Tax 80G Approval**: AABCN7313DF20231  
 - **Income Tax 12A Registration**: AABCN7313DE20231  
 - **Registered Address**: Garautha, Jhansi District, Bundelkhand, Uttar Pradesh - 284202, India  
