@@ -327,7 +327,7 @@ export function DonationSection({ showTitle = true }: DonationSectionProps) {
                   <span className="font-mono font-bold text-[#001c37]">{SITE_CONFIG.cin}</span>
                 </div>
                 <div className="flex justify-between items-center py-1 border-b border-slate-200/60">
-                  <span className="text-slate-500">NITI Aayog Darpan:</span>
+                  <span className="text-slate-500">Darpan ID:</span>
                   <span className="font-mono font-bold text-[#00873e]">{SITE_CONFIG.ngoDarpan}</span>
                 </div>
                 <div className="flex justify-between items-center py-1 border-b border-slate-200/60">

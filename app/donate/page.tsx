@@ -48,7 +48,7 @@ const DONATION_FAQS = [
   },
   {
     q: "Can I donate directly via NEFT, RTGS, or Wire Transfer?",
-    a: "Yes. For direct institutional bank transfers, RTGS/NEFT instructions, or corporate CSR donations, please contact our official finance desk at info@neevwelfare.org or +91 96963 87400. Our finance team will provide the verified statutory details and issue your 80G tax receipt promptly.",
+    a: "Yes. For direct institutional bank transfers, RTGS/NEFT instructions, or corporate CSR donations, please contact our official finance desk at info@neevwelfare.org or +91 8756377826. Our finance team will provide the verified statutory details and issue your 80G tax receipt promptly.",
   },
   {
     q: "Can international donors contribute?",

@@ -202,8 +202,8 @@ The `public/CNAME` file binds `www.neevwelfare.org` to the GitHub Pages environm
 
 &copy; 2026 Neev Welfare Foundation. All Rights Reserved.  
 - **Corporate Identity Number (CIN)**: U88900UP2026NPL252980  
-- **NITI Aayog NGO Darpan**: UP/2026/1222089  
+- **Darpan ID**: UP/2026/1222089  
 - **Income Tax 80G Approval**: AABCN7313DF20231  
 - **Income Tax 12A Registration**: AABCN7313DE20231  
-- **Registered Address**: Garautha, Jhansi District, Bundelkhand, Uttar Pradesh - 284202, India  
-- **Email**: [info@neevwelfare.org](mailto:info@neevwelfare.org) | **Phone**: +91 96963 87400
+- **Registered Address**: H. No-03, Ward No-01, Village Khajraha, Post Nauta, District Jhansi, Uttar Pradesh, India, Pin Code - 284202  
+- **Email**: [info@neevwelfare.org](mailto:info@neevwelfare.org) | **Phone**: +91 8756377826 | **Working Days**: Monday to Friday (5 days)

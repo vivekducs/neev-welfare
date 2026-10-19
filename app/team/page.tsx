@@ -33,7 +33,7 @@ const GOVERNANCE_PILLARS = [
     icon: FileCheck,
     title: "Statutory Audits & Filings",
     description:
-      "Annual accounts and activity reports are independently audited by chartered accountants and submitted to MCA, Income Tax Department, and NITI Aayog.",
+      "Annual accounts and activity reports are independently audited by chartered accountants and submitted to MCA and Income Tax Department.",
   },
   {
     icon: ShieldCheck,
@@ -43,9 +43,9 @@ const GOVERNANCE_PILLARS = [
   },
   {
     icon: Award,
-    title: "NGO Darpan Registered",
+    title: "Darpan ID Registered",
     description:
-      `Registered on NITI Aayog's NGO Darpan portal (${SITE_CONFIG.ngoDarpan}), ensuring institutional transparency and eligibility for public-private initiatives.`,
+      `Registered on the Darpan portal (${SITE_CONFIG.ngoDarpan}), ensuring institutional transparency and eligibility for public-private initiatives.`,
   },
 ];
 

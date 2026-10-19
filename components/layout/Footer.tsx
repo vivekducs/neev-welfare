@@ -77,7 +77,7 @@ export function Footer() {
               </div>
             </div>
             <p className="text-xs text-slate-400 leading-relaxed">
-              Empowering rural communities through foundational child education, youth skill certifications, women self-help collectives, doorstep healthcare, and ecological resilience across Bundelkhand.
+              Empowering marginalized communities across India through grassroots education equity, youth skill incubation, women self-help collectives, doorstep healthcare, and environmental sustainability.
             </p>
             <div className="pt-2">
               <Link
@@ -182,7 +182,7 @@ export function Footer() {
                   <strong className="text-slate-400">CIN:</strong> {SITE_CONFIG.cin}
                 </p>
                 <p className="text-[11px] text-slate-500">
-                  <strong className="text-slate-400">NGO Darpan:</strong> {SITE_CONFIG.ngoDarpan}
+                  <strong className="text-slate-400">Darpan ID:</strong> {SITE_CONFIG.ngoDarpan}
                 </p>
               </div>
             </div>

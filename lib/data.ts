@@ -312,7 +312,7 @@ export const NEWS_ARTICLES: NewsArticle[] = [
   {
     id: 1,
     title: "Equipping 500+ Rural Students With Foundational STEM Kits",
-    date: "October 2025",
+    date: "October 2026",
     category: "Education",
     image: "/images/v26_2841.png",
     excerpt:
@@ -323,7 +323,7 @@ export const NEWS_ARTICLES: NewsArticle[] = [
   {
     id: 2,
     title: "Garautha Women's Collective Inaugurates Tailoring Hub",
-    date: "September 2025",
+    date: "October 2026",
     category: "Livelihoods",
     image: "/images/v26_2860.png",
     excerpt:
@@ -334,7 +334,7 @@ export const NEWS_ARTICLES: NewsArticle[] = [
   {
     id: 3,
     title: "Planting 5,000 Native Saplings Across Jhansi Rural Belt",
-    date: "August 2025",
+    date: "September 2026",
     category: "Environment",
     image: "/images/v26_2879.png",
     excerpt:
@@ -399,23 +399,23 @@ export interface CommunityEvent {
 export const COMMUNITY_EVENTS: CommunityEvent[] = [
   {
     title: "Winter Tree Afforestation Sprint",
-    date: "Dec 18, 2025",
+    date: "Nov 15, 2026",
     time: "8:00 AM – 1:00 PM",
-    location: "Khajraha Sub-District, Jhansi",
+    location: "Village Khajraha, Jhansi",
     category: "Tree Plantation & Clean Water",
     badge: "ENVIRONMENT",
   },
   {
     title: "Rural Health & Maternal Wellness Camp",
-    date: "Jan 12, 2026",
+    date: "Oct 28, 2026",
     time: "9:00 AM – 4:00 PM",
-    location: "Garautha Community Health Center",
+    location: "Garautha Community Health Center, Jhansi",
     category: "Medical Camps / Healthcare",
     badge: "HEALTHCARE",
   },
   {
     title: "Youth Tech & Robotics Workshop",
-    date: "Feb 05, 2026",
+    date: "Dec 05, 2026",
     time: "10:00 AM – 3:30 PM",
     location: "Neev Digital Center, Jhansi",
     category: "Tech Literacy & Computer Training",

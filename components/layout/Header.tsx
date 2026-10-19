@@ -56,7 +56,7 @@ export function Header() {
                 <span className="text-[8.5px] xs:text-[9px] sm:text-[10px] font-semibold text-slate-500 tracking-tight leading-tight mt-0.5 whitespace-nowrap">
                   CIN: <strong className="text-slate-700 font-semibold">{SITE_CONFIG.cin}</strong>{" "}
                   <span className="text-slate-300">•</span>{" "}
-                  <span className="hidden sm:inline">NITI Aayog </span>Darpan ID: <strong className="text-slate-700 font-semibold">{SITE_CONFIG.ngoDarpan}</strong>
+                  Darpan ID: <strong className="text-slate-700 font-semibold">{SITE_CONFIG.ngoDarpan}</strong>
                 </span>
               </div>
             </Link>

@@ -28,7 +28,7 @@ const TIMELINE = [
     year: "2023",
     title: "Foundation & Institutional Setup",
     description:
-      "Incorporated as a Section 8 non-profit organization under the Ministry of Corporate Affairs. Secured 12A, 80G tax exemptions and NITI Aayog NGO Darpan registration.",
+      "Incorporated as a Section 8 non-profit organization under the Ministry of Corporate Affairs. Secured 12A, 80G tax exemptions and Darpan ID registration.",
     achievement: "Headquarters established in Jhansi, UP",
   },
   {

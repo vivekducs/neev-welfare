@@ -78,7 +78,7 @@ export function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
                 CIN: {SITE_CONFIG.cin}
               </span>
               <span className="text-[9px] text-slate-500">
-                NITI Aayog Darpan: {SITE_CONFIG.ngoDarpan}
+                Darpan ID: {SITE_CONFIG.ngoDarpan}
               </span>
             </div>
           </div>
@@ -138,7 +138,7 @@ export function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
             </div>
             <div className="flex items-center gap-2">
               <MapPin className="w-3.5 h-3.5 text-[#00873e]" />
-              <span className="truncate">Garautha, Jhansi, UP</span>
+              <span className="truncate">Khajraha, Jhansi, UP</span>
             </div>
           </div>
         </div>

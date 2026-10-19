@@ -14,7 +14,7 @@ import { ContactSection } from "@/components/sections/ContactSection";
 export const metadata: Metadata = {
   title: "Contact Us | Jhansi Head Office & Field Coordination",
   description:
-    "Get in touch with Neev Welfare Foundation. Visit our Jhansi head office, call +91 96960 99499, or email info@neevwelfare.org for CSR, donations, and volunteer opportunities.",
+    "Get in touch with Neev Welfare Foundation. Visit our Jhansi registered office, call +91 8756377826, or email info@neevwelfare.org for CSR, donations, and volunteer opportunities.",
   alternates: {
     canonical: `${SITE_CONFIG.url}/contact/`,
   },
@@ -56,7 +56,7 @@ export default function ContactPage() {
                   Location & Transportation Access
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                  Our registered head office is located in Deen Dayal Nagar, Jhansi, approximately 4.5 km from the Veerangana Lakshmibai Jhansi Railway Junction (VGLB) on the Delhi-Mumbai / Delhi-Chennai main line.
+                  Our registered office is located at H. No-03, Ward No-01, Village Khajraha, Post Nauta, District Jhansi, Uttar Pradesh, India - 284202.
                 </p>
                 <div className="space-y-2 pt-2 text-xs text-slate-600">
                   <p>
@@ -66,7 +66,7 @@ export default function ContactPage() {
                     <strong className="text-[#001c37]">By Road:</strong> Easily accessible via NH-44 (North-South Corridor) and Kanpur-Jhansi Highway.
                   </p>
                   <p>
-                    <strong className="text-[#001c37]">Office Visits:</strong> Donors, CSR teams, and researchers are welcome during normal office hours (Monday–Saturday, 9:30 AM to 6:30 PM). Please call ahead for scheduled field tours.
+                    <strong className="text-[#001c37]">Office Visits:</strong> Donors, CSR teams, and researchers are welcome during normal office hours (Monday–Friday, 9:30 AM to 6:00 PM). Please call ahead for scheduled field tours.
                   </p>
                 </div>
               </div>

@@ -24,14 +24,14 @@ export function HeroSection() {
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-[#001c37] font-heading tracking-tight leading-[1.15]">
               Building Foundations for{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00873e] to-[#006830]">
-                Rural India’s
+                India’s
               </span>{" "}
               Sustainable Future
             </h1>
 
             {/* Subtitle */}
             <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-              Transforming marginalized villages across Bundelkhand through grassroots education equity, youth skill incubation, women self-help collectives, doorstep preventive healthcare, and climate resilience.
+              Transforming marginalized communities across India through grassroots education equity, youth skill incubation, women self-help collectives, doorstep preventive healthcare, environment & sustainability, and climate resilience.
             </p>
 
             {/* Primary CTAs */}
@@ -100,8 +100,8 @@ export function HeroSection() {
                           <h4 className="text-xs font-black text-[#001c37] font-heading uppercase tracking-wide">
                             Grassroots Impact
                           </h4>
-                          <p className="text-[11px] text-slate-500">
-                            Jhansi & Bundelkhand, Uttar Pradesh
+                          <p className="text-[11px] text-slate-500 font-medium">
+                            Across India
                           </p>
                         </div>
                       </div>

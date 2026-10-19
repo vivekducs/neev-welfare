@@ -126,7 +126,7 @@ export function ContactSection({ showTitle = true }: ContactSectionProps) {
                   <span className="font-mono text-slate-700">{SITE_CONFIG.cin}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="font-semibold text-slate-600">NGO Darpan ID:</span>
+                  <span className="font-semibold text-slate-600">Darpan ID:</span>
                   <span className="font-mono text-slate-700">{SITE_CONFIG.ngoDarpan}</span>
                 </div>
                 <div className="flex justify-between">
