@@ -163,7 +163,7 @@ export const BOARD_OF_DIRECTORS: Director[] = [
     image: "/images/Karansing.jpeg",
     bullets: [
       "Visionary grassroots changemaker advancing social equity, foundational literacy & rural welfare.",
-      "Spearheading community initiatives, youth mobilization, and educational outreach across North India.",
+      "Spearheading community initiatives, youth mobilization, and educational outreach across India.",
       "Guiding transparent institutional governance and strategic development partnerships.",
     ],
   },
@@ -174,7 +174,7 @@ export const BOARD_OF_DIRECTORS: Director[] = [
     bullets: [
       "Championing women self-help collectives, micro-enterprises & financial self-reliance.",
       "Spearheading maternal healthcare camps, child nutrition, and girl-child education.",
-      "Driving community-led skill incubation and grassroots family welfare in Bundelkhand.",
+      "Driving community-led skill incubation and grassroots family welfare in Uttar Pradesh.",
     ],
   },
   {
@@ -184,7 +184,7 @@ export const BOARD_OF_DIRECTORS: Director[] = [
     bullets: [
       "Orchestrating sustainable institutional expansion, CSR alignments & strategic growth.",
       "Establishing donor transparency, Schedule VII compliance & multilateral collaborations.",
-      "Leading scalable rural development and high-impact interventions across districts.",
+      "Leading scalable rural development and high-impact interventions across states.",
     ],
   },
 ];

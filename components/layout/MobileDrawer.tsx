@@ -61,13 +61,13 @@ export function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
         {/* Drawer Header */}
         <div className="flex items-center justify-between p-4 border-b border-slate-100 bg-slate-50/50">
           <div className="flex items-center gap-3">
-            <div className="relative w-9 h-9">
+            <div className="relative w-10 h-10 rounded-full bg-white p-1 shadow-sm border border-slate-200/80 shrink-0 flex items-center justify-center">
               <Image
                 src={SITE_CONFIG.logo}
                 alt={SITE_CONFIG.name}
                 fill
-                sizes="36px"
-                className="object-contain"
+                sizes="40px"
+                className="object-contain p-0.5"
               />
             </div>
             <div className="flex flex-col">

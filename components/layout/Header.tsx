@@ -39,13 +39,13 @@ export function Header() {
               className="flex items-center gap-2.5 sm:gap-3 group focus:outline-none focus:ring-2 focus:ring-emerald-500 rounded-xl p-1 shrink-0"
               aria-label={`${SITE_CONFIG.name} Home`}
             >
-              <div className="relative w-9 h-9 sm:w-11 sm:h-11 transition-transform group-hover:scale-105 shrink-0">
+              <div className="relative w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-white p-0.5 shadow-sm border border-slate-100 transition-transform group-hover:scale-105 shrink-0 flex items-center justify-center">
                 <Image
                   src={SITE_CONFIG.logo}
                   alt={SITE_CONFIG.name}
                   fill
                   sizes="44px"
-                  className="object-contain"
+                  className="object-contain p-0.5"
                   priority
                 />
               </div>

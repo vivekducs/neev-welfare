@@ -57,14 +57,14 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           {/* Col 1: About & Identity */}
           <div className="space-y-4">
-            <div className="flex items-center gap-3">
-              <div className="relative w-10 h-10">
+            <div className="flex items-center gap-3.5">
+              <div className="relative w-12 h-12 rounded-full bg-white p-1 shadow-[0_0_15px_rgba(255,255,255,0.15)] ring-2 ring-white/30 shrink-0 flex items-center justify-center">
                 <Image
                   src={SITE_CONFIG.logo}
                   alt={SITE_CONFIG.name}
                   fill
-                  sizes="40px"
-                  className="object-contain brightness-110"
+                  sizes="48px"
+                  className="object-contain p-0.5"
                 />
               </div>
               <div>

@@ -40,7 +40,7 @@ export function InterventionsGridSection({ showTitle = true }: InterventionsGrid
               Our High-Impact Programs
             </h2>
             <p className="mt-3 text-sm sm:text-base text-slate-600 leading-relaxed">
-              Targeted, ground-level interventions designed to eliminate systemic poverty and build long-term resilience across North India.
+              Targeted, ground-level interventions designed to eliminate systemic poverty and build long-term resilience across India.
             </p>
           </div>
         )}
