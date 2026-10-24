@@ -100,7 +100,7 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-slate-400 hover:text-emerald-400 transition-colors flex items-center gap-1.5"
+                    className="text-slate-400 hover:text-emerald-400 hover:translate-x-1.5 transition-all duration-200 inline-flex items-center gap-1.5"
                   >
                     <span className="text-[#00873e]">›</span>
                     <span>{link.label}</span>
@@ -110,7 +110,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/donate"
-                  className="text-emerald-400 hover:text-emerald-300 font-bold transition-colors flex items-center gap-1.5"
+                  className="text-emerald-400 hover:text-emerald-300 hover:translate-x-1.5 font-bold transition-all duration-200 inline-flex items-center gap-1.5"
                 >
                   <span className="text-emerald-400">›</span>
                   <span>Donate & 80G Receipt</span>
@@ -129,7 +129,7 @@ export function Footer() {
                 <li key={area.id}>
                   <Link
                     href={`/programs#${area.id}`}
-                    className="text-slate-400 hover:text-emerald-400 transition-colors flex items-center gap-1.5 truncate"
+                    className="text-slate-400 hover:text-emerald-400 hover:translate-x-1.5 transition-all duration-200 inline-flex items-center gap-1.5 truncate max-w-full"
                   >
                     <span className="text-[#00873e]">›</span>
                     <span className="truncate">{area.title}</span>
@@ -139,7 +139,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/programs"
-                  className="text-emerald-400 hover:text-emerald-300 font-bold transition-colors flex items-center gap-1.5"
+                  className="text-emerald-400 hover:text-emerald-300 hover:translate-x-1.5 font-bold transition-all duration-200 inline-flex items-center gap-1.5"
                 >
                   <span className="text-emerald-400">›</span>
                   <span>View All 8 Interventions</span>

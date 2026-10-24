@@ -6,6 +6,7 @@ import { Footer } from "@/components/layout/Footer";
 import { BackToTop } from "@/components/layout/BackToTop";
 import { MobileBottomNav } from "@/components/layout/MobileBottomNav";
 import { ToastProvider } from "@/components/ui/Toast";
+import { ScrollReset } from "@/components/layout/ScrollReset";
 import { SITE_CONFIG } from "@/lib/constants";
 
 const inter = Inter({
@@ -123,7 +124,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${montserrat.variable} h-full antialiased scroll-smooth`}
+      className={`${inter.variable} ${montserrat.variable} h-full antialiased`}
     >
       <head>
         <script
@@ -133,6 +134,7 @@ export default function RootLayout({
       </head>
       <body className="min-h-full flex flex-col bg-white text-slate-800">
         <ToastProvider>
+          <ScrollReset />
           <Header />
           <main className="flex-1 pb-16 lg:pb-0">{children}</main>
           <Footer />

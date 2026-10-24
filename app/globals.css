@@ -21,7 +21,7 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: auto !important;
 }
 
 body {
@@ -31,6 +31,32 @@ body {
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Premium Selection */
+::selection {
+  background-color: rgba(0, 135, 62, 0.2);
+  color: #001c37;
+}
+
+/* Custom Sleek Scrollbar */
+::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+  border: 2px solid #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00873e;
 }
 
 h1, h2, h3, h4, h5, h6, .font-heading {
@@ -47,6 +73,22 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   box-shadow: 0 16px 32px -8px rgba(0, 28, 55, 0.12);
 }
 
+/* Subtle page entrance fade */
+@keyframes pageFadeIn {
+  from {
+    opacity: 0.85;
+    transform: translateY(3px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.page-entrance {
+  animation: pageFadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
 /* Accessibility: respect user prefers-reduced-motion */
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -58,3 +100,4 @@ h1, h2, h3, h4, h5, h6, .font-heading {
     scroll-behavior: auto !important;
   }
 }
+

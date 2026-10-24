@@ -37,19 +37,19 @@ export default function NotFound() {
             Home
           </Link>
           <Link
-            href="/programs/"
+            href="/programs"
             className="p-3 rounded-xl bg-slate-50 border border-slate-200/80 hover:border-[#00873e] hover:bg-emerald-50/20 text-xs font-bold text-[#001c37] transition-all"
           >
             Our Programs
           </Link>
           <Link
-            href="/about/"
+            href="/about"
             className="p-3 rounded-xl bg-slate-50 border border-slate-200/80 hover:border-[#00873e] hover:bg-emerald-50/20 text-xs font-bold text-[#001c37] transition-all"
           >
             About Us
           </Link>
           <Link
-            href="/donate/"
+            href="/donate"
             className="p-3 rounded-xl bg-slate-50 border border-slate-200/80 hover:border-[#00873e] hover:bg-emerald-50/20 text-xs font-bold text-[#001c37] transition-all"
           >
             Donate (80G)
@@ -66,7 +66,7 @@ export default function NotFound() {
             <span>Return to Homepage</span>
           </Link>
           <Link
-            href="/contact/"
+            href="/contact"
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-slate-100 hover:bg-slate-200 text-[#001c37] text-xs font-bold transition-all"
           >
             <span>Contact Helpdesk</span>

@@ -15,11 +15,19 @@ export const metadata: Metadata = {
 
 export default function NewsPage() {
   return (
-    <div className="pt-24 md:pt-32 pb-20">
+    <div className="pt-24 md:pt-32 pb-20 page-entrance">
       {/* Header Banner */}
-      <section className="bg-gradient-to-b from-slate-50 to-white py-12 md:py-16 border-b border-slate-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-[#00873e] text-xs font-bold uppercase tracking-wider mb-4">
+      <section className="relative overflow-hidden bg-gradient-to-b from-slate-50 via-emerald-50/20 to-white py-14 md:py-20 border-b border-slate-200/80">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_-10%,rgba(0,135,62,0.08),transparent)] pointer-events-none" />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <nav aria-label="Breadcrumb" className="flex items-center justify-center gap-2 text-xs font-semibold text-slate-500 mb-4">
+            <Link href="/" className="hover:text-[#00873e] transition-colors">
+              Home
+            </Link>
+            <span className="text-slate-300">/</span>
+            <span className="text-[#001c37] font-bold">News & Updates</span>
+          </nav>
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50/90 border border-emerald-200/80 text-[#00873e] text-xs font-bold uppercase tracking-wider mb-4 shadow-xs">
             <Newspaper className="w-4 h-4" />
             <span>COMMUNITY VOICES & GROUND DISPATCHES</span>
           </div>

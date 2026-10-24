@@ -26,8 +26,8 @@ export function Header() {
       <header
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
           isScrolled
-            ? "bg-white/95 backdrop-blur-md shadow-sm py-2.5 sm:py-3 border-b border-slate-200/80"
-            : "bg-white py-3.5 sm:py-4 border-b border-slate-100"
+            ? "bg-white/95 backdrop-blur-xl shadow-[0_10px_30px_-10px_rgba(0,28,55,0.08)] py-2.5 sm:py-3 border-b border-slate-200/80"
+            : "bg-white/90 backdrop-blur-md py-3.5 sm:py-4 border-b border-slate-100 shadow-[0_2px_12px_rgba(0,0,0,0.02)]"
         }`}
         id="site-header"
       >
@@ -78,8 +78,8 @@ export function Header() {
                     href={item.href}
                     className={`px-2.5 xl:px-3 py-1.5 rounded-lg text-[13px] xl:text-sm font-semibold transition-all duration-150 relative whitespace-nowrap ${
                       isActive
-                        ? "text-[#00873e] bg-emerald-50/90 font-bold"
-                        : "text-slate-600 hover:text-[#001c37] hover:bg-slate-50"
+                        ? "text-[#00873e] bg-emerald-50/90 font-bold ring-1 ring-emerald-200/60 shadow-xs"
+                        : "text-slate-600 hover:text-[#001c37] hover:bg-slate-50/80"
                     }`}
                   >
                     {item.shortLabel || item.label}
@@ -95,7 +95,7 @@ export function Header() {
             <div className="flex items-center gap-2 sm:gap-3 shrink-0">
               <Link
                 href="/donate"
-                className="inline-flex items-center gap-1.5 sm:gap-2 px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-full bg-gradient-to-r from-[#00873e] to-[#006830] text-white font-bold text-[11px] sm:text-xs uppercase tracking-wider shadow-md shadow-emerald-700/20 hover:shadow-lg hover:shadow-emerald-700/30 hover:scale-[1.02] active:scale-[0.98] transition-all whitespace-nowrap"
+                className="inline-flex items-center gap-1.5 sm:gap-2 px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-full bg-gradient-to-r from-[#00873e] to-[#006830] text-white font-bold text-[11px] sm:text-xs uppercase tracking-wider shadow-md shadow-emerald-700/20 hover:shadow-lg hover:shadow-emerald-700/35 hover:-translate-y-0.5 active:translate-y-0 transition-all whitespace-nowrap"
               >
                 <Heart className="w-3.5 h-3.5 fill-current" />
                 <span className="hidden xs:inline">DONATE NOW</span>

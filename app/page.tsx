@@ -12,7 +12,7 @@ import { ContactSection } from "@/components/sections/ContactSection";
 
 export default function HomePage() {
   return (
-    <>
+    <div className="page-entrance">
       <HeroSection />
       <MissionPillarsSection />
       <InterventionsGridSection />
@@ -25,6 +25,6 @@ export default function HomePage() {
       <VolunteerSection />
       <CsrSection />
       <ContactSection />
-    </>
+    </div>
   );
 }
