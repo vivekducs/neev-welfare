@@ -177,16 +177,6 @@ export const BOARD_OF_DIRECTORS: Director[] = [
       "Driving community-led skill incubation and grassroots family welfare in Uttar Pradesh.",
     ],
   },
-  {
-    name: "Mr. Sunil Kumar",
-    role: "Director, Strategy & Growth",
-    image: "/images/SunilKumar.jpeg",
-    bullets: [
-      "Orchestrating sustainable institutional expansion, CSR alignments & strategic growth.",
-      "Establishing donor transparency, Schedule VII compliance & multilateral collaborations.",
-      "Leading scalable rural development and high-impact interventions across states.",
-    ],
-  },
 ];
 
 export interface TeamLead {
