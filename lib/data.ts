@@ -162,19 +162,19 @@ export const BOARD_OF_DIRECTORS: Director[] = [
     role: "Founder and Managing Director",
     image: "/images/Karansing.jpeg",
     bullets: [
-      "Visionary grassroots changemaker advancing social equity, foundational literacy & rural welfare.",
-      "Spearheading community initiatives, youth mobilization, and educational outreach across India.",
-      "Guiding transparent institutional governance and strategic development partnerships.",
+      "Visionary leader advancing social equity, foundational literacy and rural welfare at the grassroots level.",
+      "Spearheading community mobilization, youth empowerment and educational outreach across India.",
+      "Driving transparent institutional governance, strategic partnerships and long-term organizational growth.",
     ],
   },
   {
     name: "Mrs. Monika",
-    role: "Director, Women & Child Welfare",
+    role: "Director - Women & Child Welfare",
     image: "/images/monikasing.jpeg",
     bullets: [
-      "Championing women self-help collectives, micro-enterprises & financial self-reliance.",
-      "Spearheading maternal healthcare camps, child nutrition, and girl-child education.",
-      "Driving community-led skill incubation and grassroots family welfare in Uttar Pradesh.",
+      "Leading women empowerment initiatives through Self-Help Groups, micro-enterprises and financial inclusion.",
+      "Directing maternal health, child nutrition and girl-child education programs in rural communities.",
+      "Strengthening family welfare and community-based skill development across Uttar Pradesh.",
     ],
   },
 ];
