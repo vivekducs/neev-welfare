@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { ShieldCheck, CheckCircle2, Award } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
 import { Director } from "@/lib/data";
 
 interface DirectorCardProps {
@@ -17,12 +17,6 @@ export function DirectorCard({ director }: DirectorCardProps) {
       <div className="relative w-full h-80 sm:h-88 bg-gradient-to-b from-slate-100/90 via-slate-50 to-white flex items-end justify-center pt-4 px-4 overflow-hidden border-b border-slate-100">
         {/* Subtle Ambient Radial Highlight */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_35%,rgba(0,135,62,0.06),transparent_70%)] pointer-events-none" />
-
-        {/* Governing Board Floating Badge */}
-        <div className="absolute top-3.5 left-3.5 z-10 inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-wider bg-white/95 backdrop-blur-md text-[#001c37] shadow-sm border border-slate-200/80">
-          <ShieldCheck className="w-3.5 h-3.5 text-[#00873e]" />
-          <span>Governing Board</span>
-        </div>
 
         {/* Director Portrait Image */}
         <div className="relative w-full h-full">
@@ -64,17 +58,6 @@ export function DirectorCard({ director }: DirectorCardProps) {
             </li>
           ))}
         </ul>
-
-        {/* Verified Fiduciary Strip */}
-        <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-400 font-medium">
-          <span className="inline-flex items-center gap-1.5 text-slate-500">
-            <Award className="w-3.5 h-3.5 text-[#00873e]" />
-            <span>Section 8 Signatory</span>
-          </span>
-          <span className="text-[#00873e] font-semibold tracking-wide">
-            Verified Governance
-          </span>
-        </div>
       </div>
     </article>
   );
