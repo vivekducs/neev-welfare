@@ -24,21 +24,29 @@ export function LeadershipSection({ showTitle = true }: LeadershipSectionProps) 
           </div>
         )}
 
-        {/* 1. Board of Directors */}
+        {/* 1. Board of Directors - Centered 2-column layout for optimal UX */}
         <div className="mb-16">
-          <div className="text-center mb-8">
-            <h3 className="text-xl sm:text-2xl font-black text-[#001c37] font-heading tracking-tight">
+          <div className="text-center mb-8 sm:mb-10">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 text-[#00873e] border border-emerald-200/80 text-[11px] font-bold uppercase tracking-wider mb-2">
+              <ShieldCheck className="w-3.5 h-3.5 text-[#00873e]" />
+              <span>Founding Changemakers</span>
+            </div>
+            <h3 className="text-xl sm:text-2xl md:text-3xl font-black text-[#001c37] font-heading tracking-tight">
               BOARD OF DIRECTORS
             </h3>
             <p className="text-xs sm:text-sm text-slate-500 mt-1">
-              Executive Leadership, Strategic Governance & Founding Changemakers
+              Executive Leadership, Strategic Governance & Statutory Stewardship
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
-            {BOARD_OF_DIRECTORS.map((director, idx) => (
-              <DirectorCard key={idx} director={director} />
-            ))}
+          <div className="max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 justify-center">
+              {BOARD_OF_DIRECTORS.map((director, idx) => (
+                <div key={idx} className="flex justify-center">
+                  <DirectorCard director={director} />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
