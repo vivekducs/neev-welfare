@@ -51,7 +51,7 @@ export function LeadershipSection({ showTitle = true }: LeadershipSectionProps) 
         </div>
 
         {/* 2. Core Leadership Team */}
-        <div className="mt-16">
+        <div className="mt-16 sm:mt-20">
           {/* Centered Divider with Capsule Pill */}
           <div className="relative flex items-center justify-center my-10">
             <div className="absolute inset-0 flex items-center" aria-hidden="true">
@@ -64,10 +64,15 @@ export function LeadershipSection({ showTitle = true }: LeadershipSectionProps) 
             </div>
           </div>
 
-          {/* Core Leadership Grid: 3 columns desktop, 2 tablet, 1 mobile */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* Core Leadership Grid: Centered flex grid for perfect balance */}
+          <div className="flex flex-wrap justify-center gap-6">
             {CORE_LEADERSHIP_TEAM.map((lead, idx) => (
-              <TeamLeadCard key={idx} lead={lead} />
+              <div
+                key={idx}
+                className="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] max-w-sm flex"
+              >
+                <TeamLeadCard lead={lead} />
+              </div>
             ))}
           </div>
         </div>

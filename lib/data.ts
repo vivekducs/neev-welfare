@@ -218,6 +218,12 @@ export const CORE_LEADERSHIP_TEAM: TeamLead[] = [
     role: "Lead - Technology",
     image: "/images/Vivek.png",
   },
+  {
+    name: "Ms. Shubhra Sudan",
+    role: "Lead - Youth & Career Counselling",
+    image: "/images/shubhra.jpeg",
+    initials: "SS",
+  },
 ];
 
 export interface ImpactStat {
