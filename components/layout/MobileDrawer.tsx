@@ -14,10 +14,14 @@ interface MobileDrawerProps {
 
 export function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
   const pathname = usePathname();
+  const prevPathnameRef = React.useRef(pathname);
 
-  // Close drawer on route change
+  // Close drawer strictly on route change
   useEffect(() => {
-    onClose();
+    if (prevPathnameRef.current !== pathname) {
+      prevPathnameRef.current = pathname;
+      onClose();
+    }
   }, [pathname, onClose]);
 
   // Lock body scroll and listen for Escape key
@@ -59,25 +63,28 @@ export function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
         aria-hidden={!isOpen}
       >
         {/* Drawer Header */}
-        <div className="flex items-center justify-between p-4 border-b border-slate-100 bg-slate-50/50">
+        <div className="flex items-center justify-between p-4 border-b border-slate-100 bg-gradient-to-r from-slate-50 via-white to-emerald-50/30">
           <div className="flex items-center gap-3">
-            <div className="relative w-10 h-10 rounded-full bg-white p-1 shadow-sm border border-slate-200/80 shrink-0 flex items-center justify-center">
+            <div className="relative w-11 h-11 rounded-2xl bg-white p-1 shadow-sm border border-slate-200/90 shrink-0 flex items-center justify-center">
               <Image
                 src={SITE_CONFIG.logo}
                 alt={SITE_CONFIG.name}
                 fill
-                sizes="40px"
+                sizes="44px"
                 className="object-contain p-0.5"
               />
             </div>
             <div className="flex flex-col">
-              <span className="font-extrabold text-sm text-[#001c37] font-heading leading-tight">
-                NEEV WELFARE FOUNDATION
-              </span>
-              <span className="text-[9.5px] font-semibold text-slate-500 mt-0.5">
-                CIN: {SITE_CONFIG.cin}
-              </span>
-              <span className="text-[9px] text-slate-500">
+              <div className="flex items-center gap-1.5">
+                <span className="font-black text-sm text-[#001c37] font-heading leading-tight">
+                  NEEV WELFARE FOUNDATION
+                </span>
+              </div>
+              <div className="text-[9.5px] font-semibold text-slate-500 mt-0.5 flex items-center gap-1">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                <span>CIN: {SITE_CONFIG.cin}</span>
+              </div>
+              <span className="text-[9px] text-slate-400">
                 Darpan ID: {SITE_CONFIG.ngoDarpan}
               </span>
             </div>
@@ -85,11 +92,21 @@ export function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
 
           <button
             onClick={onClose}
-            className="p-2 rounded-lg text-slate-500 hover:text-slate-800 hover:bg-slate-200/60 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+            className="p-2 rounded-xl text-slate-500 hover:text-slate-900 hover:bg-slate-100 border border-slate-200/60 focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all"
             aria-label="Close navigation menu"
           >
             <X className="w-5 h-5" />
           </button>
+        </div>
+
+        {/* Statutory Trust Ribbon */}
+        <div className="px-4 py-2 bg-gradient-to-r from-[#001c37] to-[#0a2f55] text-white text-[10px] font-bold flex items-center justify-between">
+          <span className="inline-flex items-center gap-1 text-emerald-300">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+            Section 8 Non-Profit
+          </span>
+          <span className="text-white/40">•</span>
+          <span className="text-slate-200">80G & 12A Certified</span>
         </div>
 
         {/* Navigation Links List */}
@@ -101,15 +118,17 @@ export function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
                 key={item.href}
                 href={item.href}
                 onClick={onClose}
-                className={`flex items-center justify-between px-4 py-3 rounded-xl text-sm font-semibold transition-colors ${
+                className={`flex items-center justify-between px-4 py-3 rounded-xl text-sm font-bold tracking-tight transition-all ${
                   isActive
-                    ? "bg-emerald-50 text-[#00873e] font-bold border-l-4 border-[#00873e]"
+                    ? "bg-emerald-50/90 text-[#00873e] shadow-xs border border-emerald-200/80"
                     : "text-slate-700 hover:bg-slate-50 hover:text-[#001c37]"
                 }`}
               >
                 <span>{item.label}</span>
-                {isActive && (
-                  <span className="w-2 h-2 rounded-full bg-[#00873e]" />
+                {isActive ? (
+                  <span className="w-2 h-2 rounded-full bg-[#00873e] shadow-xs" />
+                ) : (
+                  <span className="text-slate-300 text-xs">→</span>
                 )}
               </Link>
             );
@@ -117,27 +136,39 @@ export function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
         </nav>
 
         {/* Drawer Footer Actions & Contact Snapshot */}
-        <div className="p-4 border-t border-slate-100 bg-slate-50/70 space-y-3">
+        <div className="p-4 border-t border-slate-100 bg-slate-50/80 space-y-3">
           <Link
             href="/donate"
             onClick={onClose}
-            className="flex items-center justify-center gap-2 w-full py-3 px-4 rounded-xl bg-gradient-to-r from-[#00873e] to-[#006830] text-white font-bold text-xs uppercase tracking-wider shadow-md hover:shadow-lg transition-all"
+            className="group relative flex items-center justify-center gap-2 w-full py-3 px-4 rounded-xl bg-gradient-to-r from-[#00873e] via-[#009647] to-[#006830] text-white font-black text-xs uppercase tracking-wider shadow-md shadow-emerald-700/25 hover:shadow-lg transition-all overflow-hidden"
           >
-            <Heart className="w-4 h-4 fill-current" />
+            <Heart className="w-4 h-4 fill-current group-hover:scale-110 transition-transform" />
             <span>DONATE NOW (80G TAX BENEFIT)</span>
           </Link>
 
-          <div className="pt-2 text-xs text-slate-500 space-y-1.5">
-            <div className="flex items-center gap-2">
-              <Phone className="w-3.5 h-3.5 text-[#00873e]" />
-              <span>{SITE_CONFIG.contact.phone}</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Mail className="w-3.5 h-3.5 text-[#00873e]" />
+          <div className="pt-2 text-xs text-slate-600 space-y-2">
+            <a
+              href={`tel:${SITE_CONFIG.contact.phone}`}
+              className="flex items-center gap-2 hover:text-[#00873e] transition-colors"
+            >
+              <div className="w-6 h-6 rounded-lg bg-emerald-50 text-[#00873e] flex items-center justify-center shrink-0">
+                <Phone className="w-3.5 h-3.5" />
+              </div>
+              <span className="font-semibold">{SITE_CONFIG.contact.phone}</span>
+            </a>
+            <a
+              href={`mailto:${SITE_CONFIG.contact.email}`}
+              className="flex items-center gap-2 hover:text-[#00873e] transition-colors"
+            >
+              <div className="w-6 h-6 rounded-lg bg-emerald-50 text-[#00873e] flex items-center justify-center shrink-0">
+                <Mail className="w-3.5 h-3.5" />
+              </div>
               <span>{SITE_CONFIG.contact.email}</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <MapPin className="w-3.5 h-3.5 text-[#00873e]" />
+            </a>
+            <div className="flex items-center gap-2 text-slate-500">
+              <div className="w-6 h-6 rounded-lg bg-slate-100 text-slate-500 flex items-center justify-center shrink-0">
+                <MapPin className="w-3.5 h-3.5" />
+              </div>
               <span className="truncate">Khajraha, Jhansi, UP</span>
             </div>
           </div>
