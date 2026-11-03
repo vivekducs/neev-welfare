@@ -74,14 +74,13 @@ export function Header() {
                 <span className="inline-flex items-center gap-1.5 font-bold text-emerald-300">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
                   <ShieldCheck className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
-                  <span>Section 8 NGO</span>
-                  <span className="hidden sm:inline text-white/70 font-normal">(Govt. of India)</span>
+                  <span>Section 8 Non-Profit Organization</span>
                 </span>
                 <span className="text-white/30 hidden xs:inline">•</span>
                 <span className="inline-flex items-center gap-1 text-slate-200 font-medium">
                   <CheckCircle2 className="w-3 h-3 text-emerald-400 shrink-0" />
                   <span>80G & 12A Certified</span>
-                  <span className="hidden md:inline text-white/60">(100% Tax Relief)</span>
+                  <span className="hidden md:inline text-white/60">(Tax Relief)</span>
                 </span>
               </div>
 

@@ -31,7 +31,7 @@ export function Footer() {
                   NEEV WELFARE FOUNDATION
                 </h3>
                 <p className="text-xs text-slate-400">
-                  Registered Section 8 Nonprofit Organization | Ministry of Corporate Affairs, Govt. of India
+                  Registered Section 8 Non-Profit Organization | Ministry of Corporate Affairs
                 </p>
               </div>
             </div>

@@ -173,7 +173,7 @@ export default function AboutPage() {
                 Registered under Section 12A, affirming our legal standing as an institution working strictly without profit motive for national public benefit.
               </p>
               <div className="pt-2 text-xs font-semibold text-blue-600">
-                100% Tax-Exempt Entity
+                Tax-Exempt Non-Profit Entity
               </div>
             </div>
 

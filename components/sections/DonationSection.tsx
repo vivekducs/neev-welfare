@@ -116,7 +116,7 @@ export function DonationSection({ showTitle = true }: DonationSectionProps) {
           <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-[#00873e] text-xs font-bold uppercase tracking-wider mb-3">
               <ShieldCheck className="w-4 h-4" />
-              <span>100% SECURE & 80G TAX EXEMPT</span>
+              <span>SECURE CONTRIBUTION • 80G TAX RELIEF</span>
             </div>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-[#001c37] font-heading tracking-tight">
               Fuel Grassroots Transformation
@@ -313,7 +313,7 @@ export function DonationSection({ showTitle = true }: DonationSectionProps) {
                   <h3 className="font-heading font-black text-base text-[#001c37]">
                     Official Organization Credentials
                   </h3>
-                  <p className="text-xs text-slate-500">Government Registered Section 8 NGO</p>
+                  <p className="text-xs text-slate-500">Registered Section 8 Non-Profit Organization</p>
                 </div>
               </div>
 

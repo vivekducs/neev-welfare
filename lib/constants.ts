@@ -8,8 +8,8 @@ export const SITE_CONFIG = {
   ogImage: "/images/v26_1649.png",
   logo: "/images/v26_3521.png",
   cin: "U88900UP2026NPL252980",
-  registration: "Registered Section 8 Non-Profit Organization, Govt. of India",
-  taxExemption: "100% Tax Exemption under Section 80G & 12A of the Income Tax Act",
+  registration: "Registered Section 8 Non-Profit Organization",
+  taxExemption: "Tax Relief under Section 80G & 12A of the Income Tax Act",
   ngoDarpan: "UP/2026/1222089",
   contact: {
     address: "H. No-03, Ward No-01, Village Khajraha, Post Nauta, District Jhansi, Uttar Pradesh, India, Pin Code - 284202",
