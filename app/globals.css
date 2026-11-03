@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import "https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&display=swap";
 
 @theme {
   --color-navy-950: #061527;
@@ -10,7 +10,7 @@
   --color-green-500: #10b981;
   --color-brand-red: #dc2626;
   --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
-  --font-heading: var(--font-montserrat), system-ui, -apple-system, sans-serif;
+  --font-heading: "Montserrat", system-ui, -apple-system, sans-serif;
 }
 
 :root {
