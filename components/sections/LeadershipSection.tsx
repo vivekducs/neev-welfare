@@ -94,7 +94,7 @@ export function LeadershipSection({ showTitle = true }: LeadershipSectionProps) 
             variants={staggerContainer}
             className="max-w-4xl mx-auto"
           >
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 justify-center">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 justify-items-center">
               {BOARD_OF_DIRECTORS.map((director, idx) => (
                 <motion.div key={idx} variants={cardItemAnim} className="flex justify-center w-full">
                   <DirectorCard director={director} />
