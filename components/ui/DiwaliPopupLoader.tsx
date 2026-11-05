@@ -7,3 +7,4 @@ const DiwaliPopup = dynamic(() => import("@/components/ui/DiwaliPopup"), { ssr: 
 export function DiwaliPopupLoader() {
   return <DiwaliPopup />;
 }
+
