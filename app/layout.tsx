@@ -1,7 +1,5 @@
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
-import { SITE_CONFIG } from "@/lib/constants";
-
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
@@ -9,15 +7,14 @@ import { BackToTop } from "@/components/layout/BackToTop";
 import { MobileBottomNav } from "@/components/layout/MobileBottomNav";
 import { ToastProvider } from "@/components/ui/Toast";
 import { ScrollReset } from "@/components/layout/ScrollReset";
+import { SITE_CONFIG } from "@/lib/constants";
+import { DiwaliPopupLoader } from "@/components/ui/DiwaliPopupLoader";
+
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
   display: "swap",
 });
-
-
-
-
 
 export const viewport: Viewport = {
   themeColor: "#001c37",
@@ -131,6 +128,7 @@ export default function RootLayout({
       </head>
       <body className="min-h-full flex flex-col bg-white text-slate-800">
         <ToastProvider>
+          <DiwaliPopupLoader />
           <ScrollReset />
           <Header />
           <main className="flex-1 pb-16 lg:pb-0">{children}</main>
