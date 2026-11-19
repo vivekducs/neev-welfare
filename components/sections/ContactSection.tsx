@@ -1,37 +1,28 @@
 "use client";
 
 import React, { useState } from "react";
-import { MapPin, Phone, Mail, Clock, Send, ShieldCheck, Building2 } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, AlertCircle, Building2 } from "lucide-react";
 import { SITE_CONFIG } from "@/lib/constants";
-import { useToast } from "@/components/ui/Toast";
 
 interface ContactSectionProps {
   showTitle?: boolean;
 }
 
 export function ContactSection({ showTitle = true }: ContactSectionProps) {
-  const { showToast } = useToast();
-
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
-
-    setTimeout(() => {
-      setIsSubmitting(false);
-      showToast(
-        `Thank you, ${name}! Your message has been received by our Jhansi administrative team.`
-      );
-      setName("");
-      setEmail("");
-      setSubject("");
-      setMessage("");
-    }, 1000);
+    // Contact form backend is not yet integrated.
+    // Build a mailto link with form data and open it so the user can send via their email client.
+    const mailtoBody = encodeURIComponent(
+      `Name: ${name}\nEmail: ${email}\nSubject: ${subject}\n\nMessage:\n${message}`
+    );
+    const mailtoUrl = `mailto:${SITE_CONFIG.contact.email}?subject=${encodeURIComponent(subject || "Website Contact Form")}&body=${mailtoBody}`;
+    window.open(mailtoUrl, "_blank");
   };
 
   return (
@@ -140,11 +131,27 @@ export function ContactSection({ showTitle = true }: ContactSectionProps) {
           {/* Right Column: Direct Message Form */}
           <div className="lg:col-span-7 bg-white rounded-3xl p-6 sm:p-8 md:p-10 border border-slate-200/90 shadow-xl">
             <h3 className="font-heading font-black text-2xl text-[#001c37] mb-1">
-              Send a Direct Message
+              Send Us a Message
             </h3>
-            <p className="text-xs text-slate-500 mb-6">
-              Our team typically responds within 24 business hours.
+            <p className="text-xs text-slate-500 mb-3">
+              Our online contact form is not yet connected to a backend. Clicking &ldquo;Send&rdquo; will open your email app with your message pre-filled.
             </p>
+
+            {/* Honest notice */}
+            <div className="flex items-start gap-2.5 p-3.5 rounded-xl bg-amber-50 border border-amber-200 text-xs text-amber-900 mb-5">
+              <AlertCircle className="w-4 h-4 text-amber-500 shrink-0 mt-0.5" />
+              <span>
+                <strong>Note:</strong> This form cannot currently send messages directly. Please email us at{" "}
+                <a href={`mailto:${SITE_CONFIG.contact.email}`} className="font-bold underline text-[#00873e]">
+                  {SITE_CONFIG.contact.email}
+                </a>{" "}
+                or call{" "}
+                <a href={`tel:${SITE_CONFIG.contact.phone.replace(/\s+/g, "")}`} className="font-bold underline text-[#001c37]">
+                  {SITE_CONFIG.contact.phoneDisplay}
+                </a>
+                . We respond within 24 hours.
+              </span>
+            </div>
 
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -208,18 +215,14 @@ export function ContactSection({ showTitle = true }: ContactSectionProps) {
               <div className="pt-2">
                 <button
                   type="submit"
-                  disabled={isSubmitting}
-                  className="w-full py-4 px-6 rounded-xl bg-gradient-to-r from-[#00873e] to-[#006830] text-white font-bold text-xs uppercase tracking-wider shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-60"
+                  className="w-full py-4 px-6 rounded-xl bg-gradient-to-r from-[#00873e] to-[#006830] text-white font-bold text-xs uppercase tracking-wider shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 cursor-pointer"
                 >
-                  {isSubmitting ? (
-                    <span>Dispatching Message...</span>
-                  ) : (
-                    <>
-                      <Send className="w-4 h-4" />
-                      <span>SEND DIRECT MESSAGE</span>
-                    </>
-                  )}
+                  <Mail className="w-4 h-4" />
+                  <span>OPEN EMAIL APP TO SEND MESSAGE</span>
                 </button>
+                <p className="text-center text-[11px] text-slate-400 mt-2">
+                  Or email directly: <a href={`mailto:${SITE_CONFIG.contact.email}`} className="text-[#00873e] font-semibold hover:underline">{SITE_CONFIG.contact.email}</a>
+                </p>
               </div>
             </form>
           </div>
