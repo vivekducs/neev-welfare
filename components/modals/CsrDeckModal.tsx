@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import { X, Building2, Send, CheckCircle2 } from "lucide-react";
-import { useToast } from "@/components/ui/Toast";
+import { X, Building2, Mail, AlertCircle, CheckCircle2 } from "lucide-react";
+import { SITE_CONFIG } from "@/lib/constants";
 
 interface CsrDeckModalProps {
   isOpen: boolean;
@@ -10,8 +10,6 @@ interface CsrDeckModalProps {
 }
 
 export function CsrDeckModal({ isOpen, onClose }: CsrDeckModalProps) {
-  const { showToast } = useToast();
-  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     companyName: "",
     contactPerson: "",
@@ -24,22 +22,14 @@ export function CsrDeckModal({ isOpen, onClose }: CsrDeckModalProps) {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
-
-    setTimeout(() => {
-      setIsSubmitting(false);
-      onClose();
-      showToast(
-        "CSR Partnership Deck & Audited Financials dispatched to your work email!"
-      );
-      setFormData({
-        companyName: "",
-        contactPerson: "",
-        workEmail: "",
-        phone: "",
-        focusInterest: "Rural Education & Digital Classrooms",
-      });
-    }, 1000);
+    const mailtoBody = encodeURIComponent(
+      `CSR Partnership Dossier Request\n\nCompany / Organization: ${formData.companyName}\nContact Person: ${formData.contactPerson}\nWork Email: ${formData.workEmail}\nPhone: ${formData.phone}\nIntervention Focus: ${formData.focusInterest}`
+    );
+    const mailtoUrl = `mailto:${SITE_CONFIG.contact.email}?subject=${encodeURIComponent(
+      `CSR Dossier Request - ${formData.companyName}`
+    )}&body=${mailtoBody}`;
+    window.open(mailtoUrl, "_blank");
+    onClose();
   };
 
   return (
@@ -77,6 +67,22 @@ export function CsrDeckModal({ isOpen, onClose }: CsrDeckModalProps) {
               MCA CSR-1 Registered & Schedule VII Compliant
             </p>
           </div>
+        </div>
+
+        {/* Honest notice */}
+        <div className="flex items-start gap-2.5 p-3.5 rounded-xl bg-amber-50 border border-amber-200 text-xs text-amber-900 mb-5">
+          <AlertCircle className="w-4 h-4 text-amber-500 shrink-0 mt-0.5" />
+          <span>
+            <strong>Note:</strong> Automated dossier dispatch is not yet integrated. Clicking below will open your email app to request our dossier directly from{" "}
+            <a href={`mailto:${SITE_CONFIG.contact.email}`} className="font-bold underline text-[#00873e]">
+              {SITE_CONFIG.contact.email}
+            </a>
+            , or call{" "}
+            <a href={`tel:${SITE_CONFIG.contact.phone.replace(/\s+/g, "")}`} className="font-bold underline text-[#001c37]">
+              {SITE_CONFIG.contact.phoneDisplay}
+            </a>
+            .
+          </span>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-4">
@@ -177,18 +183,14 @@ export function CsrDeckModal({ isOpen, onClose }: CsrDeckModalProps) {
           <div className="pt-2">
             <button
               type="submit"
-              disabled={isSubmitting}
-              className="w-full py-3.5 px-6 rounded-xl bg-gradient-to-r from-[#00873e] to-[#006830] text-white font-bold text-xs uppercase tracking-wider shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 disabled:opacity-60"
+              className="w-full py-3.5 px-6 rounded-xl bg-gradient-to-r from-[#00873e] to-[#006830] text-white font-bold text-xs uppercase tracking-wider shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 cursor-pointer"
             >
-              {isSubmitting ? (
-                <span>Dispatching Deck...</span>
-              ) : (
-                <>
-                  <Send className="w-4 h-4" />
-                  <span>REQUEST CSR PARTNERSHIP DOSSIER</span>
-                </>
-              )}
+              <Mail className="w-4 h-4" />
+              <span>OPEN EMAIL APP TO REQUEST DOSSIER</span>
             </button>
+            <p className="text-center text-[11px] text-slate-400 mt-2">
+              Or email directly: <a href={`mailto:${SITE_CONFIG.contact.email}`} className="text-[#00873e] font-semibold hover:underline">{SITE_CONFIG.contact.email}</a>
+            </p>
           </div>
         </form>
       </div>

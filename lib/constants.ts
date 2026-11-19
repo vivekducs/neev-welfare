@@ -20,6 +20,13 @@ export const SITE_CONFIG = {
     hours: "Monday to Friday (5 days): 9:30 AM – 6:00 PM IST",
     workingDays: "Monday to Friday (5 days)",
   },
+  bankDetails: {
+    accountName: "NEEV WELFARE FOUNDATION",
+    accountNumber: "926020050670942",
+    ifsc: "UTIB0005348",
+    bank: "Axis Bank",
+    accountType: "Current Account",
+  },
   social: {
     facebook: "https://facebook.com/neevwelfare",
     twitter: "https://twitter.com/neevwelfare",

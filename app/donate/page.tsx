@@ -49,7 +49,7 @@ const DONATION_FAQS = [
   },
   {
     q: "Can I donate directly via NEFT, RTGS, or Wire Transfer?",
-    a: "Yes. For direct institutional bank transfers, RTGS/NEFT instructions, or corporate CSR donations, please contact our official finance desk at info@neevwelfare.org or +91 8756377826. Our finance team will provide the verified statutory details and issue your 80G tax receipt promptly.",
+    a: "Yes. You can donate directly to our official bank account — Account Name: NEEV WELFARE FOUNDATION | Account No: 926020050670942 | IFSC Code: UTIB0005348 | Bank: Axis Bank | Account Type: Current Account. After transferring, please email your transaction reference (UTR) to info@neevwelfare.org or call +91 8756377826 with your PAN details to receive your official 80G tax receipt.",
   },
   {
     q: "Can international donors contribute?",

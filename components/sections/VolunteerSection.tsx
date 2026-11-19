@@ -1,9 +1,10 @@
 "use client";
 
 import React, { useState } from "react";
-import { Users, Send, CheckCircle2, HeartHandshake } from "lucide-react";
+import { Users, Mail, AlertCircle, CheckCircle2, HeartHandshake } from "lucide-react";
 import { COMMUNITY_EVENTS, CommunityEvent } from "@/lib/data";
 import { EventCard } from "@/components/cards/EventCard";
+import { SITE_CONFIG } from "@/lib/constants";
 import { useToast } from "@/components/ui/Toast";
 
 const INTEREST_AREAS = [
@@ -21,13 +22,11 @@ interface VolunteerSectionProps {
 
 export function VolunteerSection({ showTitle = true }: VolunteerSectionProps) {
   const { showToast } = useToast();
-
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [city, setCity] = useState("");
   const [interest, setInterest] = useState(INTEREST_AREAS[0]);
-  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleRsvp = (event: CommunityEvent) => {
     // Match event category to volunteer interest area
@@ -43,18 +42,13 @@ export function VolunteerSection({ showTitle = true }: VolunteerSectionProps) {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
-
-    setTimeout(() => {
-      setIsSubmitting(false);
-      showToast(
-        `Welcome to the movement, ${name}! Your volunteer registration was received. Our team will contact you shortly.`
-      );
-      setName("");
-      setEmail("");
-      setPhone("");
-      setCity("");
-    }, 1000);
+    const mailtoBody = encodeURIComponent(
+      `Volunteer Application\n\nName: ${name}\nEmail: ${email}\nWhatsApp / Phone: ${phone}\nCity/State: ${city}\nArea of Interest: ${interest}`
+    );
+    const mailtoUrl = `mailto:${SITE_CONFIG.contact.email}?subject=${encodeURIComponent(
+      `Volunteer Application - ${name}`
+    )}&body=${mailtoBody}`;
+    window.open(mailtoUrl, "_blank");
   };
 
   return (
@@ -106,9 +100,25 @@ export function VolunteerSection({ showTitle = true }: VolunteerSectionProps) {
                 Volunteer Application Form
               </h3>
               <p className="text-xs text-slate-500">
-                Join 600+ active changemakers empowering villages in Bundelkhand
+                Join our changemakers empowering villages in Bundelkhand
               </p>
             </div>
+          </div>
+
+          {/* Honest notice */}
+          <div className="flex items-start gap-2.5 p-3.5 rounded-xl bg-amber-50 border border-amber-200 text-xs text-amber-900 mb-5">
+            <AlertCircle className="w-4 h-4 text-amber-500 shrink-0 mt-0.5" />
+            <span>
+              <strong>Note:</strong> Online volunteer registration is not yet automated. Submitting below will open your email app with your application details ready to send to{" "}
+              <a href={`mailto:${SITE_CONFIG.contact.email}`} className="font-bold underline text-[#00873e]">
+                {SITE_CONFIG.contact.email}
+              </a>
+              . You can also reach us directly at{" "}
+              <a href={`tel:${SITE_CONFIG.contact.phone.replace(/\s+/g, "")}`} className="font-bold underline text-[#001c37]">
+                {SITE_CONFIG.contact.phoneDisplay}
+              </a>
+              .
+            </span>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-4">
@@ -192,18 +202,14 @@ export function VolunteerSection({ showTitle = true }: VolunteerSectionProps) {
             <div className="pt-3">
               <button
                 type="submit"
-                disabled={isSubmitting}
-                className="w-full py-4 px-6 rounded-xl bg-gradient-to-r from-[#00873e] to-[#006830] text-white font-bold text-xs uppercase tracking-wider shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-60"
+                className="w-full py-4 px-6 rounded-xl bg-gradient-to-r from-[#00873e] to-[#006830] text-white font-bold text-xs uppercase tracking-wider shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 cursor-pointer"
               >
-                {isSubmitting ? (
-                  <span>Submitting Registration...</span>
-                ) : (
-                  <>
-                    <Send className="w-4 h-4" />
-                    <span>BECOME A REGISTERED VOLUNTEER</span>
-                  </>
-                )}
+                <Mail className="w-4 h-4" />
+                <span>OPEN EMAIL APP TO SUBMIT APPLICATION</span>
               </button>
+              <p className="text-center text-[11px] text-slate-400 mt-2">
+                Or email directly: <a href={`mailto:${SITE_CONFIG.contact.email}`} className="text-[#00873e] font-semibold hover:underline">{SITE_CONFIG.contact.email}</a>
+              </p>
             </div>
           </form>
         </div>
