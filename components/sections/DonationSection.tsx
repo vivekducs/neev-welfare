@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
-import { Heart, ShieldCheck, CheckCircle2, Lock, Mail, Phone, FileText, Building2 } from "lucide-react";
+import { Heart, ShieldCheck, CheckCircle2, Mail, Phone, Building2, Copy, AlertCircle } from "lucide-react";
 import { SITE_CONFIG } from "@/lib/constants";
 import { formatCurrency } from "@/lib/utils";
 import { DonationConfirmModal, type DonationData } from "@/components/modals/DonationConfirmModal";
@@ -99,14 +99,6 @@ export function DonationSection({ showTitle = true }: DonationSectionProps) {
 
   const handleSuccess = () => {
     setConfirmData(null);
-    showToast(
-      `Thank you, ${name}! Your donation of ${formatCurrency(amount)} was successfully processed. Official 80G tax receipt emailed to ${email}.`
-    );
-    setName("");
-    setEmail("");
-    setPan("");
-    setAmount(1000);
-    setCustomAmount("");
   };
 
   return (
@@ -290,12 +282,12 @@ export function DonationSection({ showTitle = true }: DonationSectionProps) {
                 >
                   <Heart className="w-5 h-5 fill-current" />
                   <span>
-                    CONTRIBUTE {formatCurrency(amount)} ({frequency.toUpperCase()})
+                    VIEW BANK DETAILS TO DONATE {formatCurrency(amount)}
                   </span>
                 </button>
-                <div className="flex items-center justify-center gap-2 mt-3 text-[11px] text-slate-400">
-                  <Lock className="w-3.5 h-3.5 text-emerald-600" />
-                  <span>256-bit Bank-Grade Encryption • Instant 80G Certificate</span>
+                <div className="flex items-center justify-center gap-2 mt-3 text-[11px] text-amber-600 font-semibold">
+                  <AlertCircle className="w-3.5 h-3.5" />
+                  <span>Online payment not available — direct bank transfer only</span>
                 </div>
               </div>
             </form>
@@ -341,23 +333,37 @@ export function DonationSection({ showTitle = true }: DonationSectionProps) {
               </div>
             </div>
 
-            {/* Direct Bank Wire & NEFT Transfer Desk */}
+            {/* Direct Bank Account Details */}
             <div className="bg-white rounded-3xl p-6 sm:p-7 border border-slate-200/90 shadow-sm space-y-3">
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-3 mb-1">
                 <div className="w-10 h-10 rounded-xl bg-sky-50 text-sky-700 flex items-center justify-center">
-                  <FileText className="w-5 h-5" />
+                  <Building2 className="w-5 h-5" />
                 </div>
                 <div>
                   <h4 className="font-heading font-black text-sm text-[#001c37]">
-                    Direct NEFT / RTGS Wire Transfers
+                    Donate via Bank Transfer
                   </h4>
-                  <p className="text-xs text-slate-500">Corporate & Individual Contributions</p>
+                  <p className="text-xs text-slate-500">NEFT / RTGS / IMPS</p>
                 </div>
               </div>
-              <p className="text-xs text-slate-600 leading-relaxed">
-                For direct bank wire instructions, CSR grants, or custom donation mandates, please contact our official finance desk:
+              <div className="bg-slate-50 rounded-2xl p-4 border border-slate-200/80 space-y-2 text-xs text-slate-700">
+                {[
+                  { label: "Account Name", value: "NEEV WELFARE FOUNDATION" },
+                  { label: "Account Number", value: "926020050670942" },
+                  { label: "IFSC Code", value: "UTIB0005348" },
+                  { label: "Bank", value: "Axis Bank" },
+                  { label: "Account Type", value: "Current Account" },
+                ].map(({ label, value }) => (
+                  <div key={label} className="flex items-center justify-between py-1 border-b border-slate-200/60 last:border-0">
+                    <span className="text-slate-500">{label}:</span>
+                    <span className="font-mono font-bold text-[#001c37]">{value}</span>
+                  </div>
+                ))}
+              </div>
+              <p className="text-[11px] text-slate-500 leading-relaxed">
+                After transferring, please share your UTR / transaction reference with us for your 80G receipt:
               </p>
-              <div className="pt-2 border-t border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs">
+              <div className="flex flex-col gap-1.5 text-xs">
                 <a
                   href={`mailto:${SITE_CONFIG.contact.email}`}
                   className="inline-flex items-center gap-1.5 font-bold text-[#00873e] hover:underline"
