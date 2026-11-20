@@ -40,7 +40,7 @@ export function TeamLeadCard({ lead }: TeamLeadCardProps) {
               {lead.initials || "NW"}
             </span>
             <span className="text-[10px] uppercase tracking-widest text-white/60 font-medium">
-              Photo Coming Soon
+              Leadership Team
             </span>
           </div>
         )}
