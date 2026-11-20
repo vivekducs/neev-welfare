@@ -8,7 +8,7 @@ import { MobileBottomNav } from "@/components/layout/MobileBottomNav";
 import { ToastProvider } from "@/components/ui/Toast";
 import { ScrollReset } from "@/components/layout/ScrollReset";
 import { SITE_CONFIG } from "@/lib/constants";
-import { DiwaliPopupLoader } from "@/components/ui/DiwaliPopupLoader";
+// import { DiwaliPopupLoader } from "@/components/ui/DiwaliPopupLoader";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -128,7 +128,7 @@ export default function RootLayout({
       </head>
       <body className="min-h-full flex flex-col bg-white text-slate-800">
         <ToastProvider>
-          <DiwaliPopupLoader />
+          {/* <DiwaliPopupLoader /> - Disabled as festive season is over, component code preserved for future popup use */}
           <ScrollReset />
           <Header />
           <main className="flex-1 pb-16 lg:pb-0">{children}</main>
